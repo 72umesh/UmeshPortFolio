@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --font-heading: "Cormorant Upright", serif;
+  --font-body: "Poppins", sans-serif;
+
+  --color-darkblue: #020312;
+  --color-coral: #ff6f61;
+  --color-darkcoral: #ff5f50;
+  --color-softlavender: #d1b0d5;
+  --color-deepnavy-blue: #1a1d2e;
+
+  --color-deepslate: #1d2a32;
+  --color-lightgray: #f0f0f0;
+  --color-lightgrayblue: #a3a7b0;
+  --color-silver: #b5b5b5;
+  --color-steelblue: #5c5f7d;
+  --color-vibrantorange: #ff8c42;
+  --color-neoncyan: #00d4ff;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+body {
+  background-color: var(--color-darkblue);
+  color: #fff;
+}
+.section-padding {
+  padding: 4rem 6rem;
+}
+section {
+  scroll-margin-top: 40px;
+}
+.slide-bottom {
+  animation: slide-bottom 0.5s ease;
+}
+@keyframes slide-bottom {
+  0% {
+    transform: translateY(-25%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}

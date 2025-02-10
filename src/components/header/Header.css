@@ -1,0 +1,101 @@
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+
+  padding: 1rem 2rem;
+  background-color: var(--color-deepnavy-blue);
+  font-family: var(--font-heading);
+}
+.nav-logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.nav-logo p {
+  font-size: 2.5rem;
+}
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+
+  font-size: 1.5rem;
+}
+.nav-links li {
+  list-style: none;
+  margin: 0 1rem;
+  cursor: pointer;
+}
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.5s ease;
+}
+.nav-links li a:hover {
+  color: var(--color-coral);
+}
+
+/* ----------- Navbar SmallScreen ---------- */
+.nav-smallscreen {
+  display: none;
+  font-family: "Cormorant Upright", serif;
+}
+.nav-smallscreen-links {
+  list-style: none;
+}
+.nav-smallscreen-links li a {
+  text-decoration: none;
+  color: #fff;
+  font-family: "Cormorant Upright", serif;
+  transition: color 0.5s ease;
+}
+.nav-smallscreen-links li a:hover {
+  color: var(--color-coral);
+}
+.nav-smallscreen-links li {
+  margin: 2rem;
+  cursor: pointer;
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: var(--font-body);
+}
+.smallscreen-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50vh;
+  flex-direction: column;
+  z-index: 5;
+  transform: 0.5s ease;
+
+  background-color: hsla(231, 28%, 14%, 0.96);
+}
+.smallscreen-overlay .overlay-close {
+  position: absolute;
+  top: 22px;
+  right: 30px;
+  cursor: pointer;
+  /* color: var(); */
+}
+/* ---------- Responsive Design ---------- */
+@media screen and (max-width: 1150px) {
+  .nav-logo p {
+    font-size: 2.1rem;
+  }
+  .nav-links {
+    display: none;
+  }
+  .nav-smallscreen {
+    display: flex;
+  }
+}

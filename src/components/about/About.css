@@ -1,0 +1,26 @@
+#about {
+  flex-direction: column;
+}
+.skills-container {
+  margin-top: 1.5rem;
+}
+.skills-top p {
+  font-size: 1.2rem;
+  padding: 20px;
+  text-align: justify;
+  font-family: var(--font-body);
+}
+.skills-top {
+  margin-bottom: 1rem;
+}
+.tools-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 25px;
+}
+
+@media (max-width: 480px) {
+  .tools-container {
+    grid-template-columns: 1fr;
+  }
+}

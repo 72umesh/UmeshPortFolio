@@ -1,0 +1,43 @@
+.contact-container {
+  display: flex;
+  margin: 1rem 2rem 4rem;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+}
+.contactdiv {
+  width: 30vw;
+  max-width: 300px;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  gap: 1em;
+  border: 1px solid var(--color-softlavender);
+  border-radius: 15px;
+  font-family: var(--font-body);
+}
+.contactdiv h4 {
+  font-weight: normal;
+  font-size: 1.1rem;
+}
+.logo {
+  font-size: 2rem;
+  padding: 4px;
+}
+@media screen and (max-width: 900px) {
+  .contact-container {
+    flex-direction: column;
+  }
+  .contactdiv {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 450px) {
+  .contactdiv {
+    min-width: 100%;
+  }
+  .contact-container {
+    margin: 0;
+  }
+}

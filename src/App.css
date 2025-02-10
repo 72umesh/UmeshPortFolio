@@ -1,0 +1,31 @@
+.p-cormorant {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 29.9px;
+  font-size: 2.6rem;
+}
+.p-poppins {
+  font-family: var(--font-body);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 28px;
+  font-size: 1.5rem;
+}
+.sectionh1 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 400;
+  text-align: center;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 90vh;
+}

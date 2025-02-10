@@ -1,0 +1,34 @@
+.tooldiv {
+  display: flex;
+  width: 100%;
+  padding: 8px;
+  border-radius: 25px;
+  justify-content: space-between;
+  background-color: var(--color-deepnavy-blue);
+  border: 1px solid hsl(294, 31%, 76%, 0.1);
+}
+.tooldiv-icon {
+  width: 25%;
+  border-radius: 23px;
+  padding: 4px;
+  background-color: var(--color-coral);
+}
+.tooldiv-content {
+  width: 75%;
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.tooldiv-content h3 {
+  font-family: var(--font-body);
+  font-weight: normal;
+}
+.tooldiv-content p {
+  font-family: var(--font-heading);
+}
+.tool-icon {
+  width: 100%;
+  font-size: 3.4rem;
+}
