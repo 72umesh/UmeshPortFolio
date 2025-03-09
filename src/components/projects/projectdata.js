@@ -6,21 +6,21 @@ import WidgetHub from "../../assets/WidgetHub.png";
 const projectData = [
   {
     id: 1,
-    title: "MovieList",
-    img: MovieList,
-    github: "https://github.com/72umesh/MovieList/",
-    demo: "https://72umesh.github.io/MovieList/",
-    description:
-      "A responsive React movie app with search, pagination, and a Favorites page using Hooks and an external API.",
-  },
-  {
-    id: 2,
     title: "WidgetHub",
     img: WidgetHub,
     github: "https://github.com/72umesh/WidgetHub",
     demo: "https://72umesh.github.io/WidgetHub/#/",
     description:
       "A React-based showcase of interactive UI components and mini-projects, all in one place.",
+  },
+  {
+    id: 2,
+    title: "MovieList",
+    img: MovieList,
+    github: "https://github.com/72umesh/MovieList/",
+    demo: "https://72umesh.github.io/MovieList/",
+    description:
+      "A responsive React movie app with search, pagination, and a Favorites page using Hooks and an external API.",
   },
   {
     id: 3,
