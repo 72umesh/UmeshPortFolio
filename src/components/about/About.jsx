@@ -1,8 +1,22 @@
+import { useEffect, useRef } from "react";
 import ToolDiv from "../toolsDiv/ToolDiv";
 import tools from "../toolsDiv/ToolDivData..js";
 import "./About.css";
 
+import { motion, useAnimation, useInView } from "framer-motion";
+
 function About() {
+  const ref = useRef(null);
+  const isView = useInView(ref, { threshold: 0.2 });
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (isView) {
+      controls.start({ opacity: 1, x: 0 });
+    } else {
+      controls.start({ opacity: 0, x: 100 });
+    }
+  }, [isView, controls]);
   return (
     <section id="about" class="section-padding flex-center">
       <h1 className="sectionh1">About</h1>
@@ -23,16 +37,29 @@ function About() {
           </p>
         </div>
         <div class="skills-bottom">
-          <div className="tools-container">
+          <motion.div
+            ref={ref}
+            className="tools-container"
+            initial={{ opacity: 0, x: 150 }}
+            animate={controls}
+            transition={{ duration: 0.8 }}
+          >
             {tools.map((tool) => (
-              <ToolDiv
+              <motion.div
                 key={tool.id}
-                title={tool.title}
-                Icon={tool.Icon}
-                description={tool.description}
-              />
+                variants={{
+                  initial: { opacity: 0, y: 20 },
+                  animate: { opacity: 1, y: 0 },
+                }}
+              >
+                <ToolDiv
+                  title={tool.title}
+                  Icon={tool.Icon}
+                  description={tool.description}
+                />
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
