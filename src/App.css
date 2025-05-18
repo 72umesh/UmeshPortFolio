@@ -29,3 +29,18 @@
   align-items: center;
   min-height: 90vh;
 }
+.portfolio-container {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.portfolio-main {
+  max-width: 1900px;
+}
+@media (max-width: 600px) {
+  .portfolio-container {
+    display: block;
+  }
+}
