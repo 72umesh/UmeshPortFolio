@@ -2,6 +2,7 @@ import MovieList from "../../assets/MovieList.png";
 import Maharaja from "../../assets/Maharaja.png";
 import StoreX from "../../assets/StoreX.png";
 import WidgetHub from "../../assets/WidgetHub.png";
+import Documentation from "../../assets/Documentation.png";
 
 const projectData = [
   {
@@ -40,9 +41,19 @@ const projectData = [
     img: StoreX,
     github: "https://github.com/72umesh/StoreX",
     demo: "https://72umesh.github.io/StoreX",
-    stack: "React, CSS",
+    stack: "React, CSS, JavaScript",
     description:
       "Designed a responsive Bootstrap product page with seamless navigation and dedicated sections.",
+  },
+  {
+    id: 5,
+    title: "Documentation Page",
+    img: Documentation,
+    github: "https://github.com/72umesh/Documentation-Page",
+    demo: "https://72umesh.github.io/Documentation-Page/",
+    stack: "HTML, CSS",
+    description:
+      "A simple documentation page that explains DaVinci Resolve’s features and interface for beginners.",
   },
 ];
 export default projectData;
