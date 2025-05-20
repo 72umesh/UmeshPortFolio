@@ -20,7 +20,9 @@ function Footer() {
 
       <div className="footer-bottom">
         <div className="copy my">
-          <p>©{new Date().getFullYear()} WidgetHub. All Rights Reserved.</p>
+          <p>
+            ©{new Date().getFullYear()} Umesh Portfolio. All Rights Reserved.
+          </p>
         </div>
         <p className="my myname">Design and Built By: Umesh Pal</p>
         <div className="socials my">
