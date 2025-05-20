@@ -13,6 +13,7 @@ function Project() {
             title={data.title}
             img={data.img}
             description={data.description}
+            stack={data.stack}
             demo={data.demo}
             github={data.github}
           />

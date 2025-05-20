@@ -15,5 +15,6 @@
 @media (max-width: 480px) {
   .projects-container {
     grid-template-columns: 1fr;
+    padding: 0;
   }
 }

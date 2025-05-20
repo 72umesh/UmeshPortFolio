@@ -40,13 +40,25 @@
   align-items: center;
   margin-bottom: 1rem;
 }
-.project-descriptions h3 {
+.project-descriptions .techStack span {
+  color: var(--color-coral);
+}
+.project-descriptions .techStack {
+  text-align: left;
+  align-self: flex-start;
+  margin: 0 1.3rem 0.2rem;
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+}
+.project-descriptions .desc {
   font-weight: 600;
   text-align: justify;
   margin: 0 1.3rem 1.5rem;
   font-family: var(--font-heading);
   letter-spacing: 0.04em;
+  font-size: 1.3rem;
 }
+
 .projects-buttons {
   width: 90%;
   display: flex;

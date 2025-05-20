@@ -10,6 +10,7 @@ const projectData = [
     img: WidgetHub,
     github: "https://github.com/72umesh/WidgetHub",
     demo: "https://72umesh.github.io/WidgetHub/#/",
+    stack: "React, SCSS, Framer Motion",
     description:
       "A React-based showcase of interactive UI components and mini-projects, all in one place.",
   },
@@ -19,6 +20,7 @@ const projectData = [
     img: MovieList,
     github: "https://github.com/72umesh/MovieList/",
     demo: "https://72umesh.github.io/MovieList/",
+    stack: "React, CSS, REST API",
     description:
       "A responsive React movie app with search, pagination, and a Favorites page using Hooks and an external API.",
   },
@@ -28,6 +30,7 @@ const projectData = [
     img: Maharaja,
     github: "https://github.com/72umesh/Maharaja-Restaurant",
     demo: "https://72umesh.github.io/Maharaja-Restaurant/",
+    stack: "React, CSS",
     description:
       "Developed a visually appealing and fully responsive restaurant website, using React and styled with CSS",
   },
@@ -37,6 +40,7 @@ const projectData = [
     img: StoreX,
     github: "https://github.com/72umesh/StoreX",
     demo: "https://72umesh.github.io/StoreX",
+    stack: "React, CSS",
     description:
       "Designed a responsive Bootstrap product page with seamless navigation and dedicated sections.",
   },

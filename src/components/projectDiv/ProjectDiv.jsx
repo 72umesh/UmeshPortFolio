@@ -14,7 +14,10 @@ function ProjectDiv(props) {
         <img src={props.img} onClick={handledemo} />
       </div>
       <div className="project-descriptions">
-        <h3>{props.description}</h3>
+        <h3 className="techStack">
+          Tech: <span>{props.stack}</span>
+        </h3>
+        <h3 className="desc">{props.description}</h3>
         <div class="projects-buttons">
           <button class="project-btn" onClick={handlegithub}>
             Github
