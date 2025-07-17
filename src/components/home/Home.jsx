@@ -18,17 +18,17 @@ function Home() {
     <section id="home" className="wrapper section-padding">
       <div className="circle-right"></div>
       <div className="home-info">
-        <h1 className="home-title">
+        <h1 className="home-title p-quicksand ">
           Hi, I'm <span>Umesh</span>
         </h1>
-        <h2 className="home-subtitle">
-          A passionate {""}
-          <span>
+        <h2 className="home-subtitle p-quicksand">
+          A {""}
+          <span className="p-josefin">
             <ReactTyped
               strings={[
                 "Web Developer",
                 "UI/UX Enthusiast",
-                "Frontend Engineer",
+                "Frontend Developer",
               ]}
               typeSpeed={40}
               backSpeed={30}
@@ -36,13 +36,17 @@ function Home() {
             />
           </span>
         </h2>
-        <p className="home-description">
-          I specialize in building interactive and responsive web applications
-          that provide seamless user experiences.
+        <p className="home-description p-quicksand">
+          Crafting fast, responsive, and user-friendly web interfaces with clean
+          code and a focus on seamless user experience
         </p>
-        <div className="home-buttons">
-          <button onClick={handleScrollToProjects}>My Work</button>
-          <button onClick={handleViewResume}>Resume</button>
+        <div className="home-buttons p-quicksand">
+          <button onClick={handleScrollToProjects} className="p-quicksand">
+            My Work
+          </button>
+          <button onClick={handleViewResume} className="p-quicksand">
+            Resume
+          </button>
         </div>
       </div>
       <div className="home-img">
