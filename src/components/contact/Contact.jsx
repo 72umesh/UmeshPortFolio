@@ -44,6 +44,7 @@ function Contact() {
       <h1 className="sectionh1">Contact</h1>
 
       <div className="contact-container">
+        <div className="circle-right"></div>
         {contacts.map((contact) => (
           <SingleContactDiv
             key={contact.id}

@@ -22,6 +22,7 @@ function About() {
       <h1 className="sectionh1">About</h1>
 
       <div class="skills-container">
+        <div className="circle-left"></div>
         <div class="skills-top">
           <p>
             A passionate and creative Frontend Developer, I specialize in

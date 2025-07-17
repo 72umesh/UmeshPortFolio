@@ -94,3 +94,29 @@
     width: 100%;
   }
 }
+
+#home {
+  position: relative;
+}
+.circle-right {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background-color: var(--color-darkcoral);
+  border-radius: 50%;
+  filter: blur(200px);
+
+  top: -100px;
+  right: -100px;
+}
+.circle-left {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background-color: var(--color-darkcoral);
+  border-radius: 50%;
+  filter: blur(200px);
+
+  top: -150px;
+  left: -150px;
+}

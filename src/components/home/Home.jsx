@@ -16,6 +16,7 @@ function Home() {
   }
   return (
     <section id="home" className="wrapper section-padding">
+      <div className="circle-right"></div>
       <div className="home-info">
         <h1 className="home-title">
           Hi, I'm <span>Umesh</span>

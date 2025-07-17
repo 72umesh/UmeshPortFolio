@@ -1,5 +1,6 @@
 #about {
   flex-direction: column;
+  position: relative;
 }
 .skills-container {
   margin-top: 1.5rem;
