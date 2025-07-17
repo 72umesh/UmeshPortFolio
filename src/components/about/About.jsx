@@ -23,18 +23,23 @@ function About() {
 
       <div class="skills-container">
         <div className="circle-left"></div>
-        <div class="skills-top">
+        <div class="skills-top p-quicksand">
           <p>
-            A passionate and creative Frontend Developer, I specialize in
-            building responsive and user-friendly websites using modern web
-            technologies like HTML, CSS, JavaScript, and popular frameworks such
-            as React.
+            I'm a creative Frontend Developer who enjoys building responsive and
+            user-friendly websites. I specialize in modern web technologies like
+            HTML, CSS, JavaScript, and React to create clean, interactive, and
+            visually engaging interfaces.
           </p>
           <p>
-            Focused on delivering clean code and ensuring a seamless user
-            experience across devices. Always eager to learn and grow, I stay
-            up-to-date with the latest trends in frontend development to deliver
-            high-quality solutions.
+            I focus on writing maintainable code and delivering seamless user
+            experiences across all devices. Recently, I’ve started learning
+            backend development to expand my skill set and understand the full
+            development cycle.
+          </p>
+          <p>
+            <strong>Fun Fact:</strong> You may not know this, but I can spend
+            hours experimenting with small UI tweaks — because for me, even the
+            tiniest detail can make a big difference.
           </p>
         </div>
         <div class="skills-bottom">

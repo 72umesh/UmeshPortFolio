@@ -1,12 +1,18 @@
 .tooldiv {
   width: 100%;
   height: 100%;
-  padding: 16px;
+  padding: 14px;
   border-radius: 20px;
-  background-color: var(--color-coral);
-  /* border: 1px solid #fff; */
+  /* background-color: var(--color-coral); */
+  color: var(--color-coral);
+  box-shadow: 4px 4px 5px;
+  transition: all 0.3s ease-in;
+  cursor: grab;
 }
-
+.tooldiv:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 3px var(--color-coral));
+}
 .tool-icon {
   width: 100%;
   font-size: 3.4rem;

@@ -9,7 +9,6 @@
   font-size: 1.2rem;
   padding: 20px;
   text-align: justify;
-  font-family: var(--font-body);
 }
 .skills-top {
   margin-bottom: 1rem;
@@ -20,8 +19,6 @@
   justify-content: center;
   padding: 20px 10px;
   gap: 15px;
-
-  border: 1px solid aquamarine;
 }
 
 /* @media (max-width: 480px) {
