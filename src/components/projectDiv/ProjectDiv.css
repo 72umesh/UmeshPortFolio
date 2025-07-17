@@ -6,6 +6,8 @@
   align-items: center;
   border: 1px solid var(--color-softlavender);
   border-radius: 20px;
+
+  z-index: 10;
 }
 .project-title {
   font-weight: normal;

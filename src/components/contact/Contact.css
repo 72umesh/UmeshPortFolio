@@ -18,6 +18,8 @@
   border: 1px solid var(--color-softlavender);
   border-radius: 15px;
   font-family: var(--font-body);
+
+  z-index: 10;
 }
 .contactdiv h4 {
   font-weight: normal;

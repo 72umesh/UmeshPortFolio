@@ -39,6 +39,33 @@
 .portfolio-main {
   max-width: 1900px;
 }
+
+.circle-right {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background-color: var(--color-darkcoral);
+  border-radius: 50%;
+  filter: blur(200px);
+
+  z-index: 2;
+
+  top: -100px;
+  right: -100px;
+}
+.circle-left {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background-color: var(--color-darkcoral);
+  border-radius: 50%;
+  filter: blur(200px);
+
+  z-index: 2;
+
+  top: -150px;
+  left: -150px;
+}
 @media (max-width: 600px) {
   .portfolio-container {
     display: block;
