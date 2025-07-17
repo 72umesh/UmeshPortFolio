@@ -1,5 +1,5 @@
 header {
-  position: sticky;
+  position: static;
   top: 0;
   z-index: 10;
   width: 100%;
@@ -16,13 +16,8 @@ nav {
   background-color: var(--color-deepnavy-blue);
   font-family: var(--font-heading);
 }
-.nav-logo {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-.nav-logo p {
-  font-size: 2.5rem;
+.navbar-logo-name {
+  font-size: 2.4rem;
 }
 .nav-links {
   display: flex;
@@ -49,7 +44,6 @@ nav {
 /* ----------- Navbar SmallScreen ---------- */
 .nav-smallscreen {
   display: none;
-  font-family: "Cormorant Upright", serif;
 }
 .nav-smallscreen-links {
   list-style: none;
@@ -57,7 +51,6 @@ nav {
 .nav-smallscreen-links li a {
   text-decoration: none;
   color: #fff;
-  font-family: "Cormorant Upright", serif;
   transition: color 0.5s ease;
 }
 .nav-smallscreen-links li a:hover {
@@ -68,7 +61,6 @@ nav {
   cursor: pointer;
   text-align: center;
   font-size: 1.5rem;
-  font-family: var(--font-body);
 }
 .smallscreen-overlay {
   position: fixed;
@@ -91,7 +83,7 @@ nav {
 }
 /* ---------- Responsive Design ---------- */
 @media screen and (max-width: 1150px) {
-  .nav-logo p {
+  .navbar-logo-name {
     font-size: 2.1rem;
   }
   .nav-links {

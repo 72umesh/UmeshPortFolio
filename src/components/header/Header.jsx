@@ -10,26 +10,43 @@ function Header() {
     <header>
       <nav>
         <div className="nav-logo">
-          <p className="navbar-logo-name">Umesh Pal</p>
+          <p className="navbar-logo-name">Umesh Pal.</p>
         </div>
 
         <ul className="nav-links">
           <li>
-            <a href="#home">Home</a>
+            <a href="#home" className="p-quicksand">
+              Home.
+            </a>
           </li>
           <li>
-            <a href="#about">About</a>
+            <a href="#about" className="p-quicksand">
+              About.
+            </a>
           </li>
           <li>
-            <a href="#projects">Projects</a>
+            <a href="#experience" className="p-quicksand">
+              Experience.
+            </a>
           </li>
           <li>
-            <a href="#contact">Contact</a>
+            <a href="#projects" className="p-quicksand">
+              Projects.
+            </a>
+          </li>
+          <li>
+            <a href="#contact" className="p-quicksand">
+              Contact.
+            </a>
           </li>
         </ul>
 
         <div className="nav-smallscreen">
-          <GiHamburgerMenu fontSize={27} onClick={() => setIsOpen(true)} />
+          <GiHamburgerMenu
+            fontSize={27}
+            onClick={() => setIsOpen(true)}
+            style={{ cursor: "pointer" }}
+          />
 
           {isOpen && (
             <div className="smallscreen-overlay flex-center slide-bottom">
@@ -40,23 +57,48 @@ function Header() {
               />
               <ul class="nav-smallscreen-links">
                 <li>
-                  <a href="#home" onClick={() => setIsOpen(false)}>
-                    Home
+                  <a
+                    href="#home"
+                    onClick={() => setIsOpen(false)}
+                    className="p-quicksand"
+                  >
+                    Home.
                   </a>
                 </li>
                 <li>
-                  <a href="#skills" onClick={() => setIsOpen(false)}>
-                    About
+                  <a
+                    href="#skills"
+                    onClick={() => setIsOpen(false)}
+                    className="p-quicksand"
+                  >
+                    About.
                   </a>
                 </li>
                 <li>
-                  <a href="#projects" onClick={() => setIsOpen(false)}>
-                    Projects
+                  <a
+                    href="#experience"
+                    onClick={() => setIsOpen(false)}
+                    className="p-quicksand"
+                  >
+                    Experience.
                   </a>
                 </li>
                 <li>
-                  <a href="#contact" onClick={() => setIsOpen(false)}>
-                    Contact
+                  <a
+                    href="#projects"
+                    onClick={() => setIsOpen(false)}
+                    className="p-quicksand"
+                  >
+                    Projects.
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#contact"
+                    onClick={() => setIsOpen(false)}
+                    className="p-quicksand"
+                  >
+                    Contact.
                   </a>
                 </li>
               </ul>
