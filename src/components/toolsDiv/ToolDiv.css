@@ -1,36 +1,12 @@
 .tooldiv {
-  display: flex;
   width: 100%;
-  padding: 8px;
-  border-radius: 25px;
-  justify-content: space-between;
-  background-color: var(--color-deepnavy-blue);
-  border: 1px solid hsl(294, 31%, 76%, 0.1);
-  height: 100px;
-}
-.tooldiv-icon {
-  /* width: 25%; */
-  width: 80px;
-  height: 80px;
-  border-radius: 23px;
-  margin: 2.5px;
-  background-color: var(--color-coral);
-}
-.tooldiv-content {
-  width: 85%;
   height: 100%;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  padding: 16px;
+  border-radius: 20px;
+  background-color: var(--color-coral);
+  /* border: 1px solid #fff; */
 }
-.tooldiv-content h3 {
-  font-family: var(--font-body);
-  font-weight: normal;
-}
-.tooldiv-content p {
-  font-family: var(--font-heading);
-}
+
 .tool-icon {
   width: 100%;
   font-size: 3.4rem;

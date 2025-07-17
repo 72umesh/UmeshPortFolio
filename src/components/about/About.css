@@ -15,12 +15,16 @@
 }
 .tools-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, 100px);
+  justify-content: center;
+  padding: 20px 10px;
+  gap: 15px;
+
+  border: 1px solid aquamarine;
 }
 
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
   .tools-container {
     grid-template-columns: 1fr;
   }
-}
+} */
