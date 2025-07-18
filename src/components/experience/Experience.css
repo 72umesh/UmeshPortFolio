@@ -1,0 +1,9 @@
+.experience-container {
+  position: relative;
+}
+.experience-container .line {
+  width: 2px;
+  height: 100px;
+  background-color: blue;
+  position: absolute;
+}

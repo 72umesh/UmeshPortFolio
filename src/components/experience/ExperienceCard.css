@@ -1,0 +1,24 @@
+.experienceCard {
+  border: 1px solid red;
+  padding: 10px;
+}
+.experienceCard > .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title > h3 {
+  font-size: 1.6rem;
+}
+.title > p {
+  font-size: 1.1rem;
+}
+.experienceCard-container {
+  position: relative;
+}
+.experienceCard h4 {
+  font-size: 1.3rem;
+}
+.descriptions p {
+  font-size: 1rem;
+}

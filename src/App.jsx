@@ -8,6 +8,7 @@ import Footer from "./components/footer/Footer";
 
 import ReactGA from "react-ga4";
 import { useEffect } from "react";
+import Experience from "./components/experience/Experience";
 
 function App() {
   useEffect(() => {
@@ -20,6 +21,7 @@ function App() {
       <main className="portfolio-main">
         <Home />
         <About />
+        <Experience />
         <Project />
         <Contact />
         <Footer />
