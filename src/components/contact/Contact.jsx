@@ -58,6 +58,10 @@ function Contact() {
             Logo={contact.Logo}
           />
         ))}
+        <p className="p-quicksand subheading">
+          Thanks for visiting — open to collaboration, internships, or full-time
+          roles!
+        </p>
       </div>
     </div>
   );

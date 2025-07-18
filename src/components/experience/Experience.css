@@ -2,8 +2,8 @@
   position: relative;
 }
 .experience-container .line {
-  width: 2px;
-  height: 100px;
-  background-color: blue;
+  width: 1px;
+  height: 100%;
+  background-color: var(--color-coral);
   position: absolute;
 }

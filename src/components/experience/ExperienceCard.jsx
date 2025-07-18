@@ -5,7 +5,7 @@ function ExperienceCard({ role, duration, company, description }) {
     <div className="experienceCard">
       <div className="title">
         <h3 className="p-josefin">{role}</h3>
-        <p className="p-quicksand">{duration}</p>
+        <span className="p-quicksand">{duration}</span>
       </div>
       <h4 className="p-quicksand">{company}</h4>
 

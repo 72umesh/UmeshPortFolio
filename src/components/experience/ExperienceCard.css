@@ -1,6 +1,6 @@
 .experienceCard {
-  border: 1px solid red;
-  padding: 10px;
+  /* border: 1px solid red; */
+  padding: 15px 50px;
 }
 .experienceCard > .title {
   display: flex;
@@ -10,7 +10,7 @@
 .title > h3 {
   font-size: 1.6rem;
 }
-.title > p {
+.title > span {
   font-size: 1.1rem;
 }
 .experienceCard-container {
@@ -21,4 +21,18 @@
 }
 .descriptions p {
   font-size: 1rem;
+}
+
+@media (max-width: 750px) {
+  .experienceCard {
+    padding: 10px 15px;
+    margin-top: 1.6rem;
+  }
+  .title {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .title > * {
+    width: 100%;
+  }
 }
