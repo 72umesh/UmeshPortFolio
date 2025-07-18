@@ -35,25 +35,25 @@ const projectData = [
     description:
       "Developed a visually appealing and fully responsive restaurant website, using React and styled with CSS",
   },
-  {
-    id: 4,
-    title: "StoreX",
-    img: StoreX,
-    github: "https://github.com/72umesh/StoreX",
-    demo: "https://72umesh.github.io/StoreX",
-    stack: "React, CSS, JavaScript",
-    description:
-      "Designed a responsive Bootstrap product page with seamless navigation and dedicated sections.",
-  },
-  {
-    id: 5,
-    title: "Documentation Page",
-    img: Documentation,
-    github: "https://github.com/72umesh/Documentation-Page",
-    demo: "https://72umesh.github.io/Documentation-Page/",
-    stack: "HTML, CSS",
-    description:
-      "A simple documentation page that explains DaVinci Resolve’s features and interface for beginners.",
-  },
+  // {
+  //   id: 4,
+  //   title: "StoreX",
+  //   img: StoreX,
+  //   github: "https://github.com/72umesh/StoreX",
+  //   demo: "https://72umesh.github.io/StoreX",
+  //   stack: "React, CSS, JavaScript",
+  //   description:
+  //     "Designed a responsive Bootstrap product page with seamless navigation and dedicated sections.",
+  // },
+  // {
+  //   id: 5,
+  //   title: "Documentation Page",
+  //   img: Documentation,
+  //   github: "https://github.com/72umesh/Documentation-Page",
+  //   demo: "https://72umesh.github.io/Documentation-Page/",
+  //   stack: "HTML, CSS",
+  //   description:
+  //     "A simple documentation page that explains DaVinci Resolve’s features and interface for beginners.",
+  // },
 ];
 export default projectData;
