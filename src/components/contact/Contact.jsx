@@ -41,10 +41,15 @@ function SingleContactDiv({ title, url, Logo }) {
 function Contact() {
   return (
     <div id="contact" className="section-padding">
-      <h1 className="sectionh1">Contact</h1>
+      <h1 className="sectionh1">Get In Touch</h1>
+      <p className="p-quicksand subheading">
+        Let’s turn ideas into interactive experiences. Feel free to connect,
+        collaborate, or just talk code.
+      </p>
 
       <div className="contact-container">
         <div className="circle-right"></div>
+
         {contacts.map((contact) => (
           <SingleContactDiv
             key={contact.id}

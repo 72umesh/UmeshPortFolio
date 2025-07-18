@@ -35,9 +35,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 0;
 }
 .portfolio-main {
   max-width: 1900px;
+  z-index: 5;
 }
 
 .circle-right {
