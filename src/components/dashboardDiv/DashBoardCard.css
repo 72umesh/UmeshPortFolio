@@ -1,0 +1,98 @@
+.dashboardCard {
+  width: 90%;
+
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  padding: 15px;
+  gap: 15px;
+
+  transition: all 0.2s ease-in-out;
+  position: relative;
+
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.d-card-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.d-card-img img {
+  aspect-ratio: 3/2;
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.d-card-descriptions {
+  position: relative;
+}
+.d-card-title {
+  font-weight: normal;
+  font-family: var(--font-heading);
+  margin-bottom: 10px;
+}
+.d-card-desc {
+  font-weight: 600;
+  text-align: justify;
+  font-family: var(--font-body);
+}
+
+.d-card-buttons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.d-card-buttons button {
+  font-size: 1.2rem;
+  padding: 6px 12px;
+  border-radius: 30px;
+  background: transparent;
+  color: var(--color-coral);
+  cursor: pointer;
+
+  display: flex;
+  gap: 10px;
+  outline: none;
+  border: none;
+}
+.d-card-buttons button:focus {
+  outline: 2px solid var(--color-coral);
+  outline-offset: 3px;
+}
+
+.dashboardCard:hover .d-card-buttons {
+  visibility: visible;
+  opacity: 1;
+}
+.dashboardCard:hover .d-card-desc,
+.dashboardCard:hover .d-card-title {
+  opacity: 0.5;
+  filter: blur(1px);
+  transition: opacity 0.2s ease-in;
+}
+
+@media screen and (max-width: 600px) {
+  .dashboardCard {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .d-card-img img {
+    width: 100%;
+    max-height: 90px;
+  }
+}

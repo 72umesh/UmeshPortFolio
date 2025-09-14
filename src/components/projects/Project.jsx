@@ -1,6 +1,7 @@
 import ProjectDiv from "../projectDiv/ProjectDiv";
-import projectData from "./projectdata";
+import { projectData, dashboardData } from "./projectdata";
 import "./Project.css";
+import DashBoardCard from "../dashboardDiv/DashBoardCard";
 
 function Project() {
   return (
@@ -17,6 +18,19 @@ function Project() {
             stack={data.stack}
             demo={data.demo}
             github={data.github}
+          />
+        ))}
+      </div>
+
+      <div className="dashboard-container">
+        {dashboardData.map((dashboard) => (
+          <DashBoardCard
+            key={dashboard.id}
+            title={dashboard.title}
+            img={dashboard.img}
+            description={dashboard.description}
+            github={dashboard.github}
+            demo={dashboard.demo}
           />
         ))}
       </div>

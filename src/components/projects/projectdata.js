@@ -3,6 +3,8 @@ import Maharaja from "../../assets/Maharaja.png";
 import StoreX from "../../assets/StoreX.png";
 import WidgetHub from "../../assets/WidgetHub.png";
 import Documentation from "../../assets/Documentation.png";
+import OsloDashBoard from "../../assets/Oslo_Dashboard.png";
+import HealthCareDashBoard from "../../assets/HealthCare_Dashboard.png";
 
 const projectData = [
   {
@@ -56,4 +58,23 @@ const projectData = [
   //     "A simple documentation page that explains DaVinci Resolve’s features and interface for beginners.",
   // },
 ];
-export default projectData;
+const dashboardData = [
+  {
+    id: 1,
+    title: "HealthCare Dashboard",
+    img: HealthCareDashBoard,
+    github: "https://github.com/72umesh/Healthcare-Dashboard",
+    demo: "https://72umesh.github.io/Healthcare-Dashboard/",
+    description:
+      "React.js dashboard for tracking health metrics, schedules, and activities.",
+  },
+  {
+    id: 2,
+    title: "Oslo Dashboard",
+    img: OsloDashBoard,
+    github: "https://github.com/72umesh/Zi_Cloud_Oslo_Dashboard",
+    demo: "https://72umesh.github.io/Zi_Cloud_Oslo_Dashboard/",
+    description: "CRM dashboard for chats, campaigns, and lead management.",
+  },
+];
+export { projectData, dashboardData };

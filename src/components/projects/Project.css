@@ -3,6 +3,8 @@
   flex-direction: column;
   align-items: center;
 }
+
+/* Projects  */
 .projects-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -16,6 +18,23 @@
 }
 @media (max-width: 480px) {
   .projects-container {
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+}
+
+/* Dashboards */
+.dashboard-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+  padding: 1.2rem;
+  width: 100%;
+  justify-items: center;
+}
+
+@media (max-width: 480px) {
+  .dashboard-container {
     grid-template-columns: 1fr;
     padding: 0;
   }
