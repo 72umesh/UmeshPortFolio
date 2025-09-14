@@ -4,7 +4,7 @@ import StoreX from "../../assets/StoreX.png";
 import WidgetHub from "../../assets/WidgetHub.png";
 import Documentation from "../../assets/Documentation.png";
 import OsloDashBoard from "../../assets/Oslo_DashBoard.png";
-import HealthCareDashBoard from "../../assets/Healthcare_Dashoard.png";
+import HealthCareDashBoard from "../../assets/Healthcare_Dasbhoard.png";
 
 const projectData = [
   {
