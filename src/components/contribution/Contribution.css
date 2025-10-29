@@ -13,3 +13,10 @@
   background-color: var(--color-coral);
   position: absolute;
 }
+.error-message {
+  color: red;
+  font-family: var(--font-body);
+}
+.success-message {
+  font-family: var(--font-heading);
+}
