@@ -9,6 +9,7 @@ import Footer from "./components/footer/Footer";
 import ReactGA from "react-ga4";
 import { useEffect } from "react";
 import Experience from "./components/experience/Experience";
+import Contribution from "./components/contribution/Contribution";
 
 function App() {
   useEffect(() => {
@@ -22,6 +23,7 @@ function App() {
         <Home />
         <About />
         <Experience />
+        <Contribution />
         <Project />
         <Contact />
         <Footer />

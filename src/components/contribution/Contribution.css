@@ -1,0 +1,15 @@
+.contribution-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  margin-top: 15px;
+
+  position: relative;
+}
+.contribution-container .line {
+  width: 1px;
+  height: 100%;
+  background-color: var(--color-coral);
+  position: absolute;
+}
