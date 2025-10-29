@@ -14,6 +14,9 @@ function Home() {
       projectsSection.scrollIntoView({ behavior: "smooth" });
     }
   }
+  function watchVideo(){
+    window.open("https://vimeo.com/1121443866?share=copy&fl=sv&fe=ci","_blank")
+  }
   return (
     <section id="home" className="wrapper section-padding">
       <div className="circle-right"></div>
@@ -47,6 +50,7 @@ function Home() {
           <button onClick={handleViewResume} className="p-quicksand">
             Resume
           </button>
+          <button className="p-quicksand" onClick={watchVideo}>Intro Video</button>
         </div>
       </div>
       <div className="home-img">

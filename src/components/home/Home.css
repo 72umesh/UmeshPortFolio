@@ -44,10 +44,11 @@
 }
 .home-buttons {
   margin-top: 2rem;
-  width: 50%;
+  width: 80%;
   align-self: center;
   display: flex;
   justify-content: space-evenly;
+  gap: 10px;
 }
 .home-buttons button {
   background-color: var(--color-coral);
@@ -93,6 +94,11 @@
   }
   .home-buttons {
     width: 100%;
+    gap: 10px;
+  }
+  .home-buttons button{
+    padding: 4px 8px;
+    font-size: 0.85rem;
   }
 }
 
