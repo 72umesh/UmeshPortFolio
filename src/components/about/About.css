@@ -6,9 +6,10 @@
   margin-top: 1.5rem;
 }
 .skills-top p {
-  font-size: 1.2rem;
-  padding: 20px;
+  font-size: 1rem;
+  padding: 1px;
   text-align: justify;
+  margin-bottom: 15px;
 }
 .skills-top {
   margin-bottom: 1rem;

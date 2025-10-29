@@ -98,17 +98,17 @@
     gap: 15px;
     flex-wrap: wrap;
   }
-  .home-buttons button{
+  .home-buttons button {
     padding: 4px 8px;
     font-size: 1rem;
   }
-  .home-subtitle{
+  .home-subtitle {
     font-size: 1.8rem;
   }
-  .home-subtitle span{
+  .home-subtitle span {
     font-size: 2rem;
   }
-  .home-description{
+  .home-description {
     font-size: 1rem;
   }
 }
