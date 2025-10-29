@@ -38,6 +38,7 @@
 }
 .home-subtitle span {
   color: var(--color-coral);
+  font-size: 2.6rem;
 }
 .home-description {
   font-size: 1.2rem;
@@ -94,11 +95,21 @@
   }
   .home-buttons {
     width: 100%;
-    gap: 10px;
+    gap: 15px;
+    flex-wrap: wrap;
   }
   .home-buttons button{
     padding: 4px 8px;
-    font-size: 0.85rem;
+    font-size: 1rem;
+  }
+  .home-subtitle{
+    font-size: 1.8rem;
+  }
+  .home-subtitle span{
+    font-size: 2rem;
+  }
+  .home-description{
+    font-size: 1rem;
   }
 }
 
