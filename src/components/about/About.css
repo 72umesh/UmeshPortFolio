@@ -4,6 +4,7 @@
 }
 .skills-container {
   margin-top: 1.5rem;
+  /* position: relative; */
 }
 .skills-top p {
   font-size: 1rem;
@@ -14,12 +15,19 @@
 .skills-top {
   margin-bottom: 1rem;
 }
+
 .tools-container {
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(auto-fit, 100px);
   justify-content: center;
   padding: 20px 10px;
-  gap: 15px;
+  gap: 15px; */
+
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  width: 300%;
+  position: absolute;
 }
 
 /* @media (max-width: 480px) {

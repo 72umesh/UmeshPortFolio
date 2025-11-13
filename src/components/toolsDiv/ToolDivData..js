@@ -6,9 +6,11 @@ import {
   FaFigma,
   FaGithub,
   FaNodeJs,
+  FaBootstrap,
+  FaSass
 } from "react-icons/fa";
 import { SiMysql, SiExpress } from "react-icons/si";
-
+import { RiTailwindCssFill } from "react-icons/ri";
 const tools = [
   {
     id: 1,
@@ -30,34 +32,41 @@ const tools = [
   },
   {
     id: 4,
+    Icon: FaBootstrap
+  },
+  {
+    id: 5,
     Icon: FaReact,
     title: "React",
     description: "Building dynamic and reusable UI components.",
   },
+  { id: 6, Icon: FaSass },
+
   {
-    id: 5,
-    Icon: FaFigma,
-    title: "Figma",
-    description: "UX/UI Design & Prototyping.",
-  },
-  {
-    id: 6,
+    id: 7,
     Icon: FaGithub,
     title: "Github",
     description: "Utilized for version control and hosting the code",
   },
   {
-    id: 7,
+    id: 8,
     Icon: FaNodeJs,
   },
   {
-    id: 8,
+    id: 9,
+    Icon: FaFigma,
+    title: "Figma",
+    description: "UX/UI Design & Prototyping.",
+  },
+  {
+    id: 10,
     Icon: SiMysql,
   },
   {
-    id: 9,
+    id: 11,
     Icon: SiExpress,
   },
+  { id: 12, Icon: RiTailwindCssFill }
 ];
 export default tools;
 

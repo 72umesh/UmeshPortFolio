@@ -18,12 +18,12 @@ function About() {
     }
   }, [isView, controls]);
   return (
-    <section id="about" class="section-padding flex-center">
+    <section id="about" className="section-padding flex-center">
       <h1 className="sectionh1">About</h1>
 
-      <div class="skills-container">
+      <div className="skills-container">
         <div className="circle-left"></div>
-        <div class="skills-top p-quicksand">
+        <div className="skills-top p-quicksand">
           <p>
             I'm a creative Frontend Developer who enjoys building responsive and
             user-friendly websites. I specialize in modern web technologies like
@@ -42,21 +42,21 @@ function About() {
             tiniest detail can make a big difference.
           </p>
         </div>
-        <div class="skills-bottom">
+        <div className="skills-bottom">
           <motion.div
             ref={ref}
             className="tools-container"
-            initial={{ opacity: 0, x: 150 }}
-            animate={controls}
-            transition={{ duration: 0.8 }}
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
           >
-            {tools.map((tool) => (
+            {[...tools, ...tools, ...tools].map((tool) => (
               <motion.div
                 key={tool.id}
                 variants={{
                   initial: { opacity: 0, y: 20 },
                   animate: { opacity: 1, y: 0 },
                 }}
+                className="tool-item"
               >
                 <ToolDiv
                   title={tool.title}
