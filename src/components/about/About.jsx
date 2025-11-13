@@ -49,9 +49,9 @@ function About() {
             animate={{ x: ["0%", "-50%"] }}
             transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
           >
-            {[...tools, ...tools, ...tools].map((tool) => (
+            {[...tools, ...tools, ...tools].map((tool, index) => (
               <motion.div
-                key={tool.id}
+                key={index}
                 variants={{
                   initial: { opacity: 0, y: 20 },
                   animate: { opacity: 1, y: 0 },

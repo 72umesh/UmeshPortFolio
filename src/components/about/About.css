@@ -27,6 +27,7 @@
   flex-direction: row;
   gap: 30px;
   width: 300%;
+  min-width: 300%;
   position: absolute;
 }
 
@@ -35,3 +36,8 @@
     grid-template-columns: 1fr;
   }
 } */
+@media (max-width: 1200px) {
+  .tools-container {
+    min-width: 3600px;
+  }
+}
