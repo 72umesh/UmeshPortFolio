@@ -10,6 +10,7 @@ import ReactGA from "react-ga4";
 import { useEffect } from "react";
 import Experience from "./components/experience/Experience";
 import Contribution from "./components/contribution/Contribution";
+import { Analytics } from "@vercel/analytics/next";
 
 function App() {
   useEffect(() => {
@@ -17,18 +18,21 @@ function App() {
     ReactGA.send("pageview");
   }, []);
   return (
-    <div className="portfolio-container">
-      <Header />
-      <main className="portfolio-main">
-        <Home />
-        <About />
-        <Experience />
-        <Contribution />
-        <Project />
-        <Contact />
-        <Footer />
-      </main>
-    </div>
+    <>
+      <div className="portfolio-container">
+        <Header />
+        <main className="portfolio-main">
+          <Home />
+          <About />
+          <Experience />
+          <Contribution />
+          <Project />
+          <Contact />
+          <Footer />
+        </main>
+      </div>
+      <Analytics />
+    </>
   );
 }
 
