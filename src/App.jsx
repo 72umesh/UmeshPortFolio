@@ -31,7 +31,17 @@ function App() {
           <Footer />
         </main>
       </div>
-      <Analytics />
+      <Analytics
+        beforeSend={(event) => {
+          if (
+            typeof window !== "undefined" &&
+            localStorage.getItem("ignore-analytics") === "true"
+          ) {
+            return null;
+          }
+          return event;
+        }}
+      />
     </>
   );
 }
