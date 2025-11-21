@@ -3,6 +3,7 @@ import { ReactTyped } from "react-typed";
 import HomeImage from "../../assets/HomeImage.png";
 import Resume from "../../assets/Resume.pdf";
 import "./Home.css";
+import MacFrame from "../macframe/MacFrame";
 
 function Home() {
   function handleViewResume() {
@@ -59,7 +60,8 @@ function Home() {
         </div>
       </div>
       <div className="home-img home-right-widget">
-        <img src={HomeImage} alt="Web Developer Image" />
+        {/* <img src={HomeImage} alt="Web Developer Image" /> */}
+        <MacFrame />
       </div>
     </section>
   );
