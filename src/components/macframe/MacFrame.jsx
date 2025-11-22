@@ -2,14 +2,9 @@ import { useEffect, useState } from "react";
 import { Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
 import { ReactTyped } from "react-typed";
+import { personalSettings, lines } from "./macframeData";
 
 import "./MacFrame.css";
-const lines = [
-  "> git clone umesh-portfolio",
-  "> cd umesh-portfolio",
-  "> npm start",
-  "Welcome to Umesh's Portfolio!",
-];
 
 const colors = [
   "#FF6F61",
@@ -22,6 +17,8 @@ const colors = [
   "#009B77",
 ];
 
+const Typing_Speed = 60;
+
 function MacFrame() {
   const [activeTab, setActiveTab] = useState("terminal");
   const [bgColor, setBgColor] = useState(colors[0]);
@@ -30,32 +27,45 @@ function MacFrame() {
   const [currentLine, setCurrentLine] = useState("");
   const [lineIndex, setLineIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
+  const [typingComplete, setTypingComplete] = useState(false);
 
   function handleRandomColor() {
     const random = colors[Math.floor(Math.random() * colors.length)];
     setBgColor(random);
   }
+  const resetTyping = () => {
+    setDisplayedLines([]);
+    setCurrentLine("");
+    setLineIndex(0);
+    setCharIndex(0);
+    setTypingComplete(false);
+  };
   useEffect(() => {
-    if (lineIndex >= lines.length) return; // done
+    if (lineIndex >= lines.length) {
+      setTypingComplete(true);
+      return;
+    }
+
+    if (activeTab !== "terminal") {
+      return;
+    }
 
     const interval = setInterval(() => {
       const line = lines[lineIndex];
 
-      // Still typing current line
       if (charIndex < line.length) {
         setCurrentLine((prev) => prev + line[charIndex]);
         setCharIndex((prev) => prev + 1);
       } else {
-        // Line completed
         setDisplayedLines((prev) => [...prev, line]);
         setCurrentLine("");
         setCharIndex(0);
         setLineIndex((prev) => prev + 1);
       }
-    }, 60); // typing speed
+    }, Typing_Speed);
 
     return () => clearInterval(interval);
-  }, [charIndex, lineIndex]);
+  }, [charIndex, lineIndex, activeTab]);
   return (
     <div className="macFrame" style={{ backgroundColor: bgColor }}>
       <div className="mac-header">
@@ -70,7 +80,12 @@ function MacFrame() {
             <button
               key={tab}
               className={`mac-tab ${activeTab === tab ? "active" : ""}`}
-              onClick={() => setActiveTab(tab)}
+              onClick={() => {
+                setActiveTab(tab);
+                if (tab === "terminal") {
+                  resetTyping();
+                }
+              }}
             >
               {tab}
             </button>
@@ -81,38 +96,15 @@ function MacFrame() {
       <div className="widget-content">
         {activeTab === "terminal" && (
           <div className="terminal-tab">
-            <div
-              style={{
-                color: "#000",
-                fontFamily: "monospace",
-                padding: "20px",
-                borderRadius: "12px",
-              }}
-            >
-              {/* Already typed lines */}
-              {displayedLines.map((line, i) => (
-                <div key={i}>{line}</div>
-              ))}
-
-              {/* The line currently being typed */}
-              {lineIndex < lines.length && (
-                <div>
-                  {currentLine}
-                  <span className="blink">|</span>
-                </div>
-              )}
-
-              <style>{`
-        .blink {
-          animation: blink-animation 1s steps(2, start) infinite;
-        }
-        @keyframes blink-animation {
-          to {
-            visibility: hidden;
-          }
-        }
-      `}</style>
-            </div>
+            {displayedLines.map((line, i) => (
+              <div key={i}>{line}</div>
+            ))}
+            {!typingComplete && (
+              <div className="currentLine">
+                <span>{currentLine}</span>
+                <span className="blink"></span>
+              </div>
+            )}
           </div>
         )}
 
@@ -129,9 +121,31 @@ function MacFrame() {
                 ></div>
               ))}
               <button className="random-color-btn" onClick={handleRandomColor}>
-                Random
+                Switch to different color
               </button>
             </div>
+          </div>
+        )}
+
+        {activeTab === "about.js" && (
+          <div className="about-tab">
+            <pre>
+              {"{\n"}
+              {personalSettings.map((item, index) => (
+                <div key={index} style={{ marginLeft: "20px" }}>
+                  <span className="key">"{item.key}"</span>
+                  <span>: </span>
+                  <span className="value">
+                    {Array.isArray(item.value)
+                      ? JSON.stringify(item.value)
+                      : JSON.stringify(item.value)}
+                  </span>
+                  <span>,</span>
+                  <br />
+                </div>
+              ))}
+              {"}"}
+            </pre>
           </div>
         )}
       </div>
