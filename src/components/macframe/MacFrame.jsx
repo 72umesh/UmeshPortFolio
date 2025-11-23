@@ -131,7 +131,7 @@ function MacFrame() {
             <pre>
               {"{\n"}
               {personalSettings.map((item, index) => (
-                <div key={index} style={{ marginLeft: "20px" }}>
+                <div key={index} className="about-data">
                   <span className="key">"{item.key}"</span>
                   <span style={{ color: "gray" }}>: </span>
                   <span className="value">

@@ -77,7 +77,7 @@
   .home-img {
     margin: 4rem 0 0 0;
   }
-  .home-img img {
+  .home-img > :first-child {
     width: 100%;
   }
 }
