@@ -1,19 +1,9 @@
 import { useEffect, useState } from "react";
 
-import { personalSettings, lines } from "./macframeData";
+import { personalSettings, lines, colors } from "./macframeData";
 import tinycolor from "tinycolor2";
 import "./MacFrame.css";
 
-const colors = [
-  "#FF6F61",
-  "#6B5B95",
-  "#88B04B",
-  "#F7CAC9",
-  "#92A8D1",
-  "#955251",
-  "#B565A7",
-  "#009B77",
-];
 const colorShades = colors.map((color) => ({
   header: tinycolor(color).darken(10).toString(),
   content: tinycolor(color).setAlpha(0.99).toRgbString(),
@@ -69,7 +59,12 @@ function MacFrame() {
     return () => clearInterval(interval);
   }, [charIndex, lineIndex, activeTab]);
   return (
-    <div className="macFrame" style={{ backgroundColor: bgColor.content }}>
+    <div
+      className="macFrame"
+      style={{
+        backgroundColor: bgColor.content,
+      }}
+    >
       <div className="mac-header" style={{ backgroundColor: bgColor.header }}>
         <div className="mac-dots">
           <span className="mac-btn red"></span>
@@ -118,14 +113,16 @@ function MacFrame() {
                 <div
                   key={color}
                   className="color-circle"
-                  style={{ backgroundColor: color.header }}
+                  style={{
+                    backgroundColor: color.header,
+                  }}
                   onClick={() => setBgColor(color)}
                 ></div>
               ))}
-              <button className="randocm-color-btn" onClick={handleRandomColor}>
-                Switch to Random Color
-              </button>
             </div>
+            <button className="random-color-btn" onClick={handleRandomColor}>
+              Switch to Random Color
+            </button>
           </div>
         )}
 
