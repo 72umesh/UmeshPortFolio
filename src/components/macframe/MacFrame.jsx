@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
-import { Typewriter } from "react-simple-typewriter";
-import { motion } from "framer-motion";
-import { ReactTyped } from "react-typed";
-import { personalSettings, lines } from "./macframeData";
 
+import { personalSettings, lines } from "./macframeData";
+import tinycolor from "tinycolor2";
 import "./MacFrame.css";
 
 const colors = [
@@ -16,12 +14,16 @@ const colors = [
   "#B565A7",
   "#009B77",
 ];
+const colorShades = colors.map((color) => ({
+  header: tinycolor(color).darken(10).toString(),
+  content: tinycolor(color).setAlpha(0.99).toRgbString(),
+}));
 
 const Typing_Speed = 60;
 
 function MacFrame() {
   const [activeTab, setActiveTab] = useState("terminal");
-  const [bgColor, setBgColor] = useState(colors[0]);
+  const [bgColor, setBgColor] = useState(colorShades[0]);
 
   const [displayedLines, setDisplayedLines] = useState([]);
   const [currentLine, setCurrentLine] = useState("");
@@ -30,7 +32,7 @@ function MacFrame() {
   const [typingComplete, setTypingComplete] = useState(false);
 
   function handleRandomColor() {
-    const random = colors[Math.floor(Math.random() * colors.length)];
+    const random = colorShades[Math.floor(Math.random() * colorShades.length)];
     setBgColor(random);
   }
   const resetTyping = () => {
@@ -67,8 +69,8 @@ function MacFrame() {
     return () => clearInterval(interval);
   }, [charIndex, lineIndex, activeTab]);
   return (
-    <div className="macFrame" style={{ backgroundColor: bgColor }}>
-      <div className="mac-header">
+    <div className="macFrame" style={{ backgroundColor: bgColor.content }}>
+      <div className="mac-header" style={{ backgroundColor: bgColor.header }}>
         <div className="mac-dots">
           <span className="mac-btn red"></span>
           <span className="mac-btn yellow"></span>
@@ -76,7 +78,7 @@ function MacFrame() {
         </div>
 
         <div className="mac-tabs">
-          {["terminal", "color.html", "about.js"].map((tab) => (
+          {["terminal", "theme.html", "about.js"].map((tab) => (
             <button
               key={tab}
               className={`mac-tab ${activeTab === tab ? "active" : ""}`}
@@ -108,20 +110,20 @@ function MacFrame() {
           </div>
         )}
 
-        {activeTab === "color.html" && (
+        {activeTab === "theme.html" && (
           <div className="color-tab">
             <p>Select a theme color</p>
             <div className="color-options">
-              {colors.map((color) => (
+              {colorShades.map((color) => (
                 <div
                   key={color}
                   className="color-circle"
-                  style={{ backgroundColor: color }}
+                  style={{ backgroundColor: color.header }}
                   onClick={() => setBgColor(color)}
                 ></div>
               ))}
-              <button className="random-color-btn" onClick={handleRandomColor}>
-                Switch to different color
+              <button className="randocm-color-btn" onClick={handleRandomColor}>
+                Switch to Random Color
               </button>
             </div>
           </div>

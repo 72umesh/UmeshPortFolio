@@ -1,32 +1,42 @@
 .macFrame {
-  width: 70%;
-
-  max-width: 500px;
+  width: 100%;
   height: 250px;
+  margin: 0 auto;
+  border-radius: 0.7rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  font-family: monospace;
+  color: #ffffff;
+  transition: color 0.5s;
 }
 
-/* Mac Header */
+/*======================== Mac Header ============================= */
 .mac-header {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 20px;
-  padding: 10px 15px;
-  background: #1e1e1e;
-  border-bottom: 1px solid #333;
+  padding: 0.75rem;
+
+  border-bottom: 1px solid rgba(51, 51, 51, 0.2);
 }
+/* Mac Dots */
 .mac-dots {
   display: flex;
   gap: 5px;
 }
 .mac-btn {
-  width: 12px;
-  height: 12px;
+  width: 0.75rem;
+  height: 0.75rem;
   border-radius: 50%;
-  display: block;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.mac-btn:hover {
+  transform: scale(1.1);
 }
 .mac-btn.red {
-  background: #ff605c;
+  background: rgba(255, 0, 0, 0.9);
 }
 .mac-btn.yellow {
   background: #ffbd44;
@@ -42,19 +52,27 @@
   gap: 12px;
 }
 .mac-tab {
-  padding: 6px 10px;
-  font-size: 13px;
+  padding: 0.5rem 0.8rem;
+  font-size: 0.875rem;
+
+  /* border-top-left-radius: 0.5rem; */
+  /* border-top-right-radius: 0.5rem; */
+  transition: color 0.2s;
   background: transparent;
   border: none;
-  color: #ccc;
+  color: #fff;
   cursor: pointer;
   transition: 0.2s ease;
   border-bottom: 2px solid transparent;
   letter-spacing: 0.06em;
+
+  /* background-color: #ffbd44; */
 }
 .mac-tab.active {
+  background-color: rgba(255, 255, 255, 0.1);
   color: #fff;
-  border-bottom: 2px solid #61dafb;
+  border-bottom: 2px solid #fff;
+  border-radius: 5px 5px 0px 0px;
 }
 
 /* Content */
@@ -69,7 +87,6 @@
   font-size: 14px;
   overflow-y: auto;
 
-  border: 1px solid blue;
   height: 80%;
 }
 
@@ -120,12 +137,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: red;
+  /* background-color: red; */
   height: 100%;
 }
-.color-tab > p {
+.color-options {
+  display: flex;
 }
-.coor-circle {
+.color-circle {
   width: 24px;
   height: 24px;
   border-radius: 50%;

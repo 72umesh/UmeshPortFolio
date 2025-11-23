@@ -16,8 +16,9 @@
   flex: 1;
   z-index: 5;
 }
-.home-img img {
+.home-img > :first-child {
   width: 80%;
+  max-width: 500px;
 }
 .home-title {
   font-size: 1.2rem;
