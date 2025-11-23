@@ -75,59 +75,41 @@
   border-radius: 5px 5px 0px 0px;
 }
 
-/* Content */
+/* ======================= Widget Content ==================== */
 .widget-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 15px;
-  font-family: "Fira Code", monospace;
+  padding: 0.6rem;
   font-size: 14px;
   overflow-y: auto;
-
-  height: 80%;
+  height: 90%;
 }
 
 /* 1. Terminal Tab */
 .terminal-tab {
-  width: 100%;
-  height: 100%;
   color: var(--color-darkblue);
-  padding: 20px;
-  border-radius: 6px;
   overflow-y: auto;
-  font-family: monospace;
+  line-height: 1.4;
 }
 .currentLine {
   display: flex;
   align-items: center;
 }
-@keyframes blink {
+.currentLine > * + * {
+  margin-left: 0.25rem;
+}
+.blink {
+  width: 0.5rem;
+  height: 1rem;
+  background-color: #fff;
+  display: inline-block;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+@keyframes pulse {
   0%,
-  50%,
   100% {
     opacity: 1;
   }
-  25%,
-  75% {
+  50% {
     opacity: 0;
-  }
-}
-.terminal-tab .cursor {
-  display: inline-block;
-  width: 0.5rem;
-  height: 1rem;
-  background-color: #00ff7f;
-  animation: blink 1s steps(2, start) infinite;
-}
-.blink {
-  animation: blink-animation 1s steps(2, start) infinite;
-}
-@keyframes blink-animation {
-  to {
-    visibility: hidden;
   }
 }
 
