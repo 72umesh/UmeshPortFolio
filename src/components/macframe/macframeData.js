@@ -1,13 +1,10 @@
 export const personalSettings = [
     { key: "username", value: "umesh_k_pal" },
-    { key: "role", value: "Frontend Developer" },
+    { key: "role", value: "Web Developer" },
     { key: "focus", value: "React.js + UI Engineering" },
-    { key: "currentProject", value: "WidgetHub 2.0" },
-    { key: "strength", value: ["Clean UI", "Reusable Components", "Speed"] },
-    { key: "workingMode", value: "Dark Mode Always" },
-    { key: "widgetsBuilt", value: 50 },
-    { key: "hobbies", value: ["Open Source", "UI Experiments", "Animations"] },
-
+    { key: "currentlyLearning", value: "Next.js" },
+    { key: "strength", value: ["Clean UI", "Reusable Components"] },
+    { key: "lookingFor", value: "Innovative frontend or full-stack roles" }
 ];
 export const lines = [
     "> git clone umesh-portfolio",

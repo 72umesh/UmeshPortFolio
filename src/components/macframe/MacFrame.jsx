@@ -133,7 +133,7 @@ function MacFrame() {
               {personalSettings.map((item, index) => (
                 <div key={index} style={{ marginLeft: "20px" }}>
                   <span className="key">"{item.key}"</span>
-                  <span>: </span>
+                  <span style={{ color: "gray" }}>: </span>
                   <span className="value">
                     {Array.isArray(item.value)
                       ? JSON.stringify(item.value)

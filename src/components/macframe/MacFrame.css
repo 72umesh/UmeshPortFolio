@@ -85,7 +85,7 @@
 
 /* 1. Terminal Tab */
 .terminal-tab {
-  color: var(--color-darkblue);
+  /* color: var(--color-darkblue); */
   overflow-y: auto;
   line-height: 1.4;
 }
@@ -161,12 +161,14 @@
 /* 3. About Tab */
 .about-tab {
   color: #d4d4d4;
-  /* padding: 16px; */
-  border-radius: 10px;
-  font-family: "Fira Code", monospace;
-  /* font-size: 15px; */
-  /* line-height: 1.5; */
+  font-size: 0.875rem;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
 }
 .about-tab .key {
-  color: #9cdcfe;
+  /* color: black; */
+  color: #7dd3fc;
+}
+.about-tab .value {
+  color: #a3e635;
 }
