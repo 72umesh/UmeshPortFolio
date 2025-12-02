@@ -1,0 +1,19 @@
+import "./FilterProjects.css";
+
+function FilterProjects({ selectedCategory, setSelectedCategory }) {
+  const categories = ["React.js", "Next.js", "AI", "HTML/CSS"];
+  return (
+    <div className="categories-filter">
+      {categories.map((category) => (
+        <button
+          key={category}
+          onClick={() => setSelectedCategory(category)}
+          className={selectedCategory === category ? "active" : ""}
+        >
+          {category}
+        </button>
+      ))}
+    </div>
+  );
+}
+export default FilterProjects;

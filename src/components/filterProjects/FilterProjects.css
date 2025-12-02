@@ -1,0 +1,48 @@
+.categories-filter {
+  max-width: 1000px;
+  width: 50%;
+  z-index: 10;
+
+  display: flex;
+  margin: 15px 0;
+  gap: 10px;
+}
+.categories-filter button {
+  display: block;
+  width: 100%;
+  padding: 0.6rem 1rem;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  letter-spacing: 0.06em;
+  border-radius: 15px;
+  cursor: pointer;
+
+  border: none;
+  background-color: var(--color-coral);
+  color: #fff;
+  opacity: 0.9;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+.categories-filter button:hover {
+  background-color: var(--color-darkcoral);
+  color: var(--color-darkblue);
+  opacity: 1;
+}
+.categories-filter button.active {
+  background-color: var(--color-darkblue);
+  color: var(--color-softlavender);
+  transition: all 0.2s ease-in-out;
+}
+
+@media (max-width: 1200px) {
+  .categories-filter {
+    width: 70%;
+  }
+}
+
+@media (max-width: 900px) {
+  .categories-filter {
+    width: 90%;
+  }
+}

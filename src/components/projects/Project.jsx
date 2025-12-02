@@ -2,11 +2,19 @@ import ProjectDiv from "../projectDiv/ProjectDiv";
 import { projectData, dashboardData } from "./projectdata";
 import "./Project.css";
 import DashBoardCard from "../dashboardDiv/DashBoardCard";
+import FilterProjects from "../filterProjects/FilterProjects";
+import { useState } from "react";
 
 function Project() {
+  const [selectedCategory, setSelectedCategory] = useState("React.js");
   return (
     <section id="projects" className="section-padding">
       <h1 className="sectionh1">Projects</h1>
+
+      <FilterProjects
+        selectedCategory={selectedCategory}
+        setSelectedCategory={setSelectedCategory}
+      />
       <div className="projects-container">
         <div className="circle-left"></div>
         {projectData.map((data) => (
