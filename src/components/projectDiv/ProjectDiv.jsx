@@ -1,3 +1,4 @@
+import { techMap } from "../technologies/technologiesData";
 import "./ProjectDiv.css";
 
 function ProjectDiv(props) {
@@ -7,6 +8,7 @@ function ProjectDiv(props) {
   function handlegithub() {
     window.open(props.github, "_blank");
   }
+
   return (
     <div className="project-div">
       <h2 className="project-title">{props.title}</h2>
@@ -15,7 +17,13 @@ function ProjectDiv(props) {
       </div>
       <div className="project-descriptions">
         <h3 className="techStack">
-          Tech: <span>{props.stack}</span>
+          Tech:{" "}
+          <span className="techstackIcon">
+            {props.technologies?.map((tech, index) => {
+              const Icon = techMap[tech];
+              return <Icon key={index} />;
+            })}
+          </span>
         </h3>
         <h3 className="desc">{props.description}</h3>
         <div class="projects-buttons">

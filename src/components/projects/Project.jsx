@@ -4,6 +4,7 @@ import "./Project.css";
 import DashBoardCard from "../dashboardDiv/DashBoardCard";
 import FilterProjects from "../filterProjects/FilterProjects";
 import { useState } from "react";
+import SCSS from "../technologies/SCSS";
 
 function Project() {
   const [selectedCategory, setSelectedCategory] = useState("React.js");
@@ -23,7 +24,7 @@ function Project() {
             title={data.title}
             img={data.img}
             description={data.description}
-            stack={data.stack}
+            technologies={data.technologies}
             demo={data.demo}
             github={data.github}
           />

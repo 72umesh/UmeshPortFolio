@@ -5,6 +5,7 @@ import WidgetHub from "../../assets/WidgetHub.png";
 import Documentation from "../../assets/Documentation.png";
 import OsloDashBoard from "../../assets/Oslo_DashBoard.png";
 import HealthCareDashBoard from "../../assets/Healthcare_DashBoard.png";
+import { techMap } from "../technologies/technologiesData";
 
 const projectData = [
   {
@@ -13,7 +14,7 @@ const projectData = [
     img: WidgetHub,
     github: "https://github.com/72umesh/WidgetHub",
     demo: "https://72umesh.github.io/WidgetHub/#/",
-    stack: "React, SCSS, Framer Motion",
+    technologies: ["react", "scss"],
     description:
       "A React-based showcase of interactive UI components and mini-projects, all in one place.",
   },

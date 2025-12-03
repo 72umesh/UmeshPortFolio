@@ -109,3 +109,15 @@
     width: 50%;
   }
 }
+.techstackIcon {
+  display: flex;
+  gap: 2px;
+}
+.techstackIcon svg {
+  width: 24px;
+  height: 24px;
+}
+.techStack {
+  display: flex;
+  align-items: center;
+}
