@@ -1,4 +1,5 @@
 import { techMap } from "../../data/technologiesData";
+import { FaRegPlayCircle } from "react-icons/fa6";
 import "./ProjectDiv.css";
 
 function ProjectDiv(props) {
@@ -12,8 +13,11 @@ function ProjectDiv(props) {
   return (
     <div className="project-div">
       <h2 className="project-title">{props.title}</h2>
-      <div className="project-image">
-        <img src={props.img} onClick={handledemo} />
+      <div className="project-image" onClick={handledemo}>
+        <img src={props.img} />
+        <p className="play">
+          <FaRegPlayCircle className="play-icon" />
+        </p>
       </div>
       <div className="project-descriptions">
         <h3 className="techStack">
@@ -25,7 +29,7 @@ function ProjectDiv(props) {
             })}
           </span>
         </h3>
-        <h3 className="desc">{props.description}</h3>
+        <p className="desc">{props.description}</p>
         <div class="projects-buttons">
           <button class="project-btn" onClick={handlegithub}>
             Github
