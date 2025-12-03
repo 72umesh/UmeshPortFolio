@@ -3,7 +3,7 @@ import { ReactTyped } from "react-typed";
 import HomeImage from "../../assets/HomeImage.png";
 import Resume from "../../assets/Resume.pdf";
 import "./Home.css";
-import MacFrame from "../macframe/MacFrame";
+import MacFrame from "../../components/macframe/MacFrame";
 
 function Home() {
   function handleViewResume() {

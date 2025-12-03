@@ -1,10 +1,9 @@
-import ProjectDiv from "../projectDiv/ProjectDiv";
-import { projectData, dashboardData } from "./projectdata";
 import "./Project.css";
-import DashBoardCard from "../dashboardDiv/DashBoardCard";
-import FilterProjects from "../filterProjects/FilterProjects";
+import ProjectDiv from "../../components/projectDiv/ProjectDiv";
+import DashBoardCard from "../../components/dashboardDiv/DashBoardCard";
+import FilterProjects from "../../components/filterProjects/FilterProjects";
 import { useState } from "react";
-import SCSS from "../technologies/SCSS";
+import { projectData, dashboardData } from "../../data/projectdata";
 
 function Project() {
   const [selectedCategory, setSelectedCategory] = useState("React.js");

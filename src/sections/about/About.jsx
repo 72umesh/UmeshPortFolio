@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
-import ToolDiv from "../toolsDiv/ToolDiv";
-import tools from "../toolsDiv/ToolDivData..js";
+import ToolDiv from "../../components/toolsDiv/ToolDiv.jsx";
+import tools from "../../components/toolsDiv/ToolDivData..js";
 import "./About.css";
 
 import { motion, useAnimation, useInView } from "framer-motion";

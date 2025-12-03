@@ -1,15 +1,15 @@
 import "./App.css";
-import Header from "./components/header/Header";
-import Home from "./components/home/Home";
-import About from "./components/about/About";
-import Project from "./components/projects/Project";
-import Contact from "./components/contact/Contact";
-import Footer from "./components/footer/Footer";
+import Header from "./sections/header/Header";
+import Home from "./sections/home/Home";
+import About from "./sections/about/About";
+import Project from "./sections/projects/Project";
+import Contact from "./sections/contact/Contact";
+import Footer from "./sections/footer/Footer";
 
 import ReactGA from "react-ga4";
 import { useEffect } from "react";
-import Experience from "./components/experience/Experience";
-import Contribution from "./components/contribution/Contribution";
+import Experience from "./sections/experience/Experience";
+import Contribution from "./sections/contribution/Contribution";
 import { Analytics } from "@vercel/analytics/react";
 
 function App() {

@@ -1,11 +1,11 @@
-import MovieList from "../../assets/MovieList.png";
-import Maharaja from "../../assets/Maharaja.png";
-import StoreX from "../../assets/StoreX.png";
-import WidgetHub from "../../assets/WidgetHub.png";
-import Documentation from "../../assets/Documentation.png";
-import OsloDashBoard from "../../assets/Oslo_DashBoard.png";
-import HealthCareDashBoard from "../../assets/Healthcare_DashBoard.png";
-import { techMap } from "../../data/technologiesData";
+import MovieList from "../assets/MovieList.png";
+import Maharaja from "../assets/Maharaja.png";
+import StoreX from "../assets/StoreX.png";
+import WidgetHub from "../assets/WidgetHub.png";
+import Documentation from "../assets/Documentation.png";
+import OsloDashBoard from "../assets/Oslo_DashBoard.png";
+import HealthCareDashBoard from "../assets/Healthcare_DashBoard.png";
+import { techMap } from "./technologiesData";
 
 const projectData = [
   {
@@ -14,7 +14,7 @@ const projectData = [
     img: WidgetHub,
     github: "https://github.com/72umesh/WidgetHub",
     demo: "https://72umesh.github.io/WidgetHub/#/",
-    technologies: ["react", "scss"],
+    technologies: ["react", "scss", "framer"],
     description:
       "A React-based showcase of interactive UI components and mini-projects, all in one place.",
   },
@@ -25,6 +25,7 @@ const projectData = [
     github: "https://github.com/72umesh/MovieList/",
     demo: "https://72umesh.github.io/MovieList/",
     stack: "React, CSS, REST API",
+    technologies: ["react", "css",],
     description:
       "A responsive React movie app with search, pagination, and a Favorites page using Hooks and an external API.",
   },
@@ -35,6 +36,7 @@ const projectData = [
     github: "https://github.com/72umesh/Maharaja-Restaurant",
     demo: "https://72umesh.github.io/Maharaja-Restaurant/",
     stack: "React, CSS",
+    technologies: ["react", "css"],
     description:
       "Developed a visually appealing and fully responsive restaurant website, using React and styled with CSS",
   },
