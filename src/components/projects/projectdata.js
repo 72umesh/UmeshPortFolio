@@ -5,7 +5,7 @@ import WidgetHub from "../../assets/WidgetHub.png";
 import Documentation from "../../assets/Documentation.png";
 import OsloDashBoard from "../../assets/Oslo_DashBoard.png";
 import HealthCareDashBoard from "../../assets/Healthcare_DashBoard.png";
-import { techMap } from "../technologies/technologiesData";
+import { techMap } from "../../data/technologiesData";
 
 const projectData = [
   {

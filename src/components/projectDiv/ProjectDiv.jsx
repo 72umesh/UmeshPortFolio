@@ -1,4 +1,4 @@
-import { techMap } from "../technologies/technologiesData";
+import { techMap } from "../../data/technologiesData";
 import "./ProjectDiv.css";
 
 function ProjectDiv(props) {
