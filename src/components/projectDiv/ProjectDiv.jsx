@@ -1,5 +1,5 @@
 import { techMap } from "../../data/technologiesData";
-import { FaRegPlayCircle } from "react-icons/fa6";
+import { FaRegPlayCircle } from "react-icons/fa";
 import "./ProjectDiv.css";
 
 function ProjectDiv(props) {
