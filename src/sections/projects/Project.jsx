@@ -17,17 +17,23 @@ function Project() {
       />
       <div className="projects-container">
         <div className="circle-left"></div>
-        {projectData.map((data) => (
-          <ProjectDiv
-            key={data.id}
-            title={data.title}
-            img={data.img}
-            description={data.description}
-            technologies={data.technologies}
-            demo={data.demo}
-            github={data.github}
-          />
-        ))}
+        {projectData
+          .filter((data) =>
+            selectedCategory === "React.js"
+              ? data.categories === "React.js"
+              : data.categories === selectedCategory
+          )
+          .map((data) => (
+            <ProjectDiv
+              key={data.id}
+              title={data.title}
+              img={data.img}
+              description={data.description}
+              technologies={data.technologies}
+              demo={data.demo}
+              github={data.github}
+            />
+          ))}
       </div>
 
       <div className="dashboard-container">

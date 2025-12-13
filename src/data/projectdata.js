@@ -17,6 +17,7 @@ const projectData = [
     technologies: ["react", "scss", "framer"],
     description:
       "A React-based showcase of interactive UI components and mini-projects, all in one place.",
+    categories: "React.js"
   },
   {
     id: 2,
@@ -28,6 +29,7 @@ const projectData = [
     technologies: ["react", "css",],
     description:
       "A responsive React movie app with search, pagination, and a Favorites page using Hooks and an external API.",
+    categories: "React.js"
   },
   {
     id: 3,
@@ -39,6 +41,7 @@ const projectData = [
     technologies: ["react", "css"],
     description:
       "Developed a visually appealing and fully responsive restaurant website, using React and styled with CSS",
+
   },
   // {
   //   id: 4,
