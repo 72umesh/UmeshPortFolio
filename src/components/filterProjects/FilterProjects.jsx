@@ -1,7 +1,7 @@
 import "./FilterProjects.css";
 
 function FilterProjects({ selectedCategory, setSelectedCategory }) {
-  const categories = ["React.js", "Next.js", "Fullstack", "HTML/CSS"];
+  const categories = ["All", "React.js", "Next.js", "Fullstack", "HTML/CSS"];
   return (
     <div className="categories-filter">
       {categories.map((category) => (

@@ -6,7 +6,7 @@ import { useState } from "react";
 import { projectData, dashboardData } from "../../data/projectdata";
 
 function Project() {
-  const [selectedCategory, setSelectedCategory] = useState("React.js");
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
   const filteredProjects = projectData.filter((data) => {
     if (selectedCategory === "All") return true;
