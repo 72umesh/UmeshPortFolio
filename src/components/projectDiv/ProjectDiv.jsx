@@ -13,6 +13,8 @@ function ProjectDiv(props) {
   return (
     <div className="project-div">
       <h2 className="project-title">{props.title}</h2>
+      {props.isNew && <div className="new-badge">✨New</div>}
+
       <div className="project-image" onClick={handledemo}>
         <img src={props.img} />
         <p className="play">

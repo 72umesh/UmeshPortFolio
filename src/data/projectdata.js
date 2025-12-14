@@ -17,7 +17,8 @@ const projectData = [
     technologies: ["react", "scss", "framer"],
     description:
       "A React-based showcase of interactive UI components and mini-projects, all in one place.",
-    categories: "React.js"
+    categories: "React.js",
+    isNew: true
   },
   {
     id: 2,

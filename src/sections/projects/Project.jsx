@@ -32,6 +32,7 @@ function Project() {
               technologies={data.technologies}
               demo={data.demo}
               github={data.github}
+              isNew={data.isNew}
             />
           ))}
       </div>
