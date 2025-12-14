@@ -5,9 +5,11 @@ import WidgetHub from "../assets/WidgetHub.png";
 import Documentation from "../assets/Documentation.png";
 import OsloDashBoard from "../assets/Oslo_DashBoard.png";
 import HealthCareDashBoard from "../assets/Healthcare_DashBoard.png";
+import TripWave from "../assets/TripWave.png"
 import { techMap } from "./technologiesData";
 
 const projectData = [
+  // React.js
   {
     id: 1,
     title: "WidgetHub",
@@ -18,7 +20,6 @@ const projectData = [
     description:
       "A React-based showcase of interactive UI components and mini-projects, all in one place.",
     categories: "React.js",
-    isNew: true
   },
   {
     id: 2,
@@ -42,18 +43,22 @@ const projectData = [
     technologies: ["react", "css"],
     description:
       "Developed a visually appealing and fully responsive restaurant website, using React and styled with CSS",
+    categories: "React.js"
 
   },
-  // {
-  //   id: 4,
-  //   title: "StoreX",
-  //   img: StoreX,
-  //   github: "https://github.com/72umesh/StoreX",
-  //   demo: "https://72umesh.github.io/StoreX",
-  //   stack: "React, CSS, JavaScript",
-  //   description:
-  //     "Designed a responsive Bootstrap product page with seamless navigation and dedicated sections.",
-  // },
+  // HTML/CSS
+
+  {
+    id: 4,
+    title: "StoreX",
+    img: StoreX,
+    github: "https://github.com/72umesh/StoreX",
+    demo: "https://72umesh.github.io/StoreX",
+    technologies: ["html", "bootstrap"],
+    description:
+      "Designed a responsive Bootstrap product page with seamless navigation and dedicated sections.",
+    categories: "HTML/CSS"
+  },
   // {
   //   id: 5,
   //   title: "Documentation Page",
@@ -64,6 +69,18 @@ const projectData = [
   //   description:
   //     "A simple documentation page that explains DaVinci Resolve’s features and interface for beginners.",
   // },
+
+  {
+    id: 5,
+    title: "TripWave",
+    img: TripWave,
+    github: "https://github.com/72umesh/TripWave",
+    demo: "https://tripwave.vercel.app/",
+    technologies: ["nextjs", "typescript", "tailwind"],
+    description: "TripWave is a modern travel website that helps users discover destinations, explore trips, and plan journeys with an intuitive interface.",
+    categories: "Next.js",
+    isNew: true
+  }
 ];
 const dashboardData = [
   {

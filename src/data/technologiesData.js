@@ -7,6 +7,7 @@ import Nextjs from "../components/technologies/Nextjs";
 import Tailwind from "../components/technologies/Tailwind";
 import JavaScript from "../components/technologies/JavaScript";
 import TypeScript from "../components/technologies/TypeScript";
+import Bootstrap from "../components/technologies/Bootstrap";
 
 export const techMap = {
   html: HTML,
@@ -17,5 +18,6 @@ export const techMap = {
   framer: Framer,
   nextjs: Nextjs,
   tailwind: Tailwind,
-  typescript: TypeScript
+  typescript: TypeScript,
+  bootstrap: Bootstrap
 };
