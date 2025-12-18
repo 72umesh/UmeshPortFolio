@@ -1,6 +1,6 @@
 import "./Experience.css";
 import ExperienceCard from "./ExperienceCard";
-import experiences from "../../data/experiencedata";
+import { experiences } from "../../data/experiencedata";
 
 function Experience() {
   return (
@@ -17,6 +17,7 @@ function Experience() {
             duration={e.duration}
             company={e.company}
             description={e.description}
+            isView={e.isView}
           />
         ))}
       </div>

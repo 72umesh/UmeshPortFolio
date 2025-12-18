@@ -21,4 +21,17 @@ const experiences = [
     ],
   },
 ];
-export default experiences;
+const challenges = [
+  { title: "Copy to Clipboard", link: "https://namastedev.com/practice/copy-to-clipboard" },
+  { title: "Back to Top", link: "https://namastedev.com/practice/back-to-top" },
+  { title: "Character Counter", link: "https://namastedev.com/practice/character-counter" },
+  { title: "Word Counter", link: "https://namastedev.com/practice/word-counter" },
+  { title: "Generate Password", link: "https://namastedev.com/practice/generate-password" },
+  { title: "Temperature Convertor", link: "https://namastedev.com/practice/temperature-convertor" },
+  { title: "Undo Redo", link: "https://namastedev.com/practice/undo-redo" },
+  { title: "Rock Paper Scissor", link: "https://namastedev.com/practice/rock-paper-scissor" },
+  { title: "Auto Save Text", link: "https://namastedev.com/practice/auto-save-text" },
+  { title: "Auto Save Form", link: "https://namastedev.com/practice/auto-save-form" },
+
+]
+export { experiences, challenges };
