@@ -11,6 +11,7 @@ import { useEffect } from "react";
 import Experience from "./sections/experience/Experience";
 import Contribution from "./sections/contribution/Contribution";
 import { Analytics } from "@vercel/analytics/react";
+import SmoothFollower from "./components/smoothFollower/SmoothFollower";
 
 function App() {
   useEffect(() => {
@@ -19,6 +20,7 @@ function App() {
   }, []);
   return (
     <>
+      <SmoothFollower />
       <div className="portfolio-container">
         <Header />
         <main className="portfolio-main">
