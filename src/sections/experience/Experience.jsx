@@ -1,6 +1,6 @@
 import "./Experience.css";
 import ExperienceCard from "./ExperienceCard";
-import experiences from "./experiencedata";
+import experiences from "../../data/experiencedata";
 
 function Experience() {
   return (

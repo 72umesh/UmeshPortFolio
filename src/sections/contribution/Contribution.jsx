@@ -1,6 +1,6 @@
 import "./Contribution.css";
 import ContributionCard from "./ContributionCard";
-import contribution from "./contributiondata";
+import contribution from "../../data/contributiondata";
 
 function Contribution() {
   return (
