@@ -18,6 +18,15 @@ function App() {
     ReactGA.initialize("G-4W4BG1Q8CZ");
     ReactGA.send("pageview");
   }, []);
+  useEffect(() => {
+  if (window.location.hash) {
+    const id = window.location.hash.substring(1); 
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+}, []);
   return (
     <>
       <SmoothFollower />
