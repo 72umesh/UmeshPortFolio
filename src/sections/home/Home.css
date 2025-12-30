@@ -69,6 +69,21 @@
   color: black;
   background-color: var(--color-darkcoral);
 }
+
+/* Contact Details */
+.home-contact-container{
+ display: flex;
+ margin: 30px auto 0;
+}
+.contacta {
+  margin: 0 10px;
+  color: var(--color-coral);
+  font-size: 1.5rem;
+}
+.contacta:hover {
+  color: var(--color-darkcoral);
+}
+
 /* ---------- Responsive ---------- */
 @media screen and (max-width: 1150px) {
   .wrapper {

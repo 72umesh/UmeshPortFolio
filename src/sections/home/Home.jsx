@@ -1,9 +1,10 @@
-import React from "react";
+
 import { ReactTyped } from "react-typed";
-import HomeImage from "../../assets/HomeImage.png";
 import Resume from "../../assets/Resume.pdf";
 import "./Home.css";
 import MacFrame from "../../components/macframe/MacFrame";
+import contactdetails from "../../data/homedata";
+import Tooltip from "../../components/tooltip/Tooltip";
 
 function Home() {
   function handleViewResume() {
@@ -33,19 +34,19 @@ function Home() {
           <span className="p-josefin">
             <ReactTyped
               strings={[
-                "Web Developer",
-                "UI/UX Enthusiast",
-                "Frontend Developer",
+                "UI Developer",
+                "Full Stack Developer",
+                "Frontend Web Developer",
               ]}
-              typeSpeed={40}
+              typeSpeed={50}
               backSpeed={30}
+              backDelay={1500}
               // loop
             />
           </span>
         </h2>
         <p className="home-description p-quicksand">
-          Crafting fast, responsive, and user-friendly web interfaces with clean
-          code and a focus on seamless user experience
+            Building fast, interactive & pixel-perfect web experiences with React, clean code and attention to detail
         </p>
         <div className="home-buttons p-quicksand">
           <button onClick={handleScrollToProjects} className="p-quicksand">
@@ -57,6 +58,19 @@ function Home() {
           <button className="p-quicksand" onClick={watchVideo}>
             Intro Video
           </button>
+        </div>
+
+        <div className="home-contact-container">
+          {
+          contactdetails.map((contact) => (
+            <Tooltip key={contact.title} text={contact.title}>
+              <a href={contact.url} target="_blank" rel="noopener noreferrer" className="contacta">
+                {<contact.Logo />}
+              </a>
+            </Tooltip>
+
+          ))
+          }
         </div>
       </div>
       <div className="home-img home-right-widget">
