@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import ToolDiv from "../../components/toolsDiv/ToolDiv.jsx";
-import tools from "../../components/toolsDiv/ToolDivData..js";
+import tools from "../../data/ToolDivData..js";
 import "./About.css";
 
 import { motion, useAnimation, useInView } from "framer-motion";
@@ -46,10 +46,12 @@ function About() {
           <motion.div
             ref={ref}
             className="tools-container"
-            animate={{ x: ["0%", "-50%"] }}
+            animate={{ x: ["0%", "-50%"] }} // -50%
             transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
           >
-            {[...tools, ...tools, ...tools].map((tool, index) => (
+            {
+            [...tools, ...tools, ...tools].map((tool, index) => (
+
               <motion.div
                 key={index}
                 variants={{
@@ -64,7 +66,8 @@ function About() {
                   description={tool.description}
                 />
               </motion.div>
-            ))}
+            ))
+            }
           </motion.div>
         </div>
       </div>

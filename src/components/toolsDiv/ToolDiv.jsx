@@ -1,14 +1,10 @@
 import "./ToolDiv.css";
 
-function ToolDiv({ Icon, title, description }) {
+function ToolDiv({ Icon, title }) {
   return (
     <div className="tooldiv flex-center">
       <Icon className="tool-icon" />
-
-      {/* <div className="tooldiv-content">
-        <h3>{title}</h3>
-        <p>{description}</p>
-      </div> */}
+      <p className="tool-title">{title}</p>
     </div>
   );
 }
