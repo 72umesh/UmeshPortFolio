@@ -4,6 +4,7 @@ import tools from "../../data/ToolDivData..js";
 import "./About.css";
 
 import { motion, useAnimation, useInView } from "framer-motion";
+import Tooltip from "../../components/tooltip/Tooltip.jsx";
 
 function About() {
   const ref = useRef(null);
@@ -25,21 +26,18 @@ function About() {
         <div className="circle-left"></div>
         <div className="skills-top p-quicksand">
           <p>
-            I'm a creative Frontend Developer who enjoys building responsive and
-            user-friendly websites. I specialize in modern web technologies like
-            HTML, CSS, JavaScript, and React to create clean, interactive, and
-            visually engaging interfaces.
+          I'm a frontend developer obsessed with the tiny details that turn good interfaces into great ones. 
+          I spend way too many hours pixel-pushing, animation-tweaking, and interaction-polishing because that 2px margin or 0.1s timing difference can completely change how something <em>feels</em>.
           </p>
           <p>
-            I focus on writing maintainable code and delivering seamless user
-            experiences across all devices. Recently, I’ve started learning
-            backend development to expand my skill set and understand the full
-            development cycle.
+            Right now I'm strongest in React, TypeScript, modern CSS (Tailwind + vanilla), and building responsive, 
+            fast-loading experiences that work everywhere. I've authored 22+ real interview-style React & JavaScript 
+            challenges for NamasteDev (getting 3000+ attempts and 15k+ views), and during my internship I went full-stack
+            building a complete pet-selling platform with Node, Express, MySQL and fighting deployment demons on Render/Railway.
           </p>
+
           <p>
-            <strong>Fun Fact:</strong> You may not know this, but I can spend
-            hours experimenting with small UI tweaks — because for me, even the
-            tiniest detail can make a big difference.
+            <strong>Fun Fact:</strong> I once spent a weekend perfecting a button hover... and I'd do it again.
           </p>
         </div>
         <div className="skills-bottom">

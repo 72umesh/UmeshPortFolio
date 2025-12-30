@@ -13,15 +13,10 @@
   margin-bottom: 15px;
 }
 .skills-top {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .tools-container {
-  /* display: grid;
-  grid-template-columns: repeat(auto-fit, 100px);
-  justify-content: center;
-  padding: 20px 10px;
-  gap: 15px; */
 
   display: flex;
   flex-direction: row;
@@ -30,12 +25,6 @@
   min-width: 300%;
   position: absolute;
 }
-
-/* @media (max-width: 480px) {
-  .tools-container {
-    grid-template-columns: 1fr;
-  }
-} */
 @media (max-width: 1200px) {
   .tools-container {
     min-width: 3600px;
