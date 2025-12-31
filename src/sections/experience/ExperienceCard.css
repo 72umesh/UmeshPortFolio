@@ -3,26 +3,39 @@
   z-index: 3;
   position: relative;
 }
-.experienceCard > .title {
+.experienceCard > .title-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.title > h3 {
+.experience-role{
   font-size: 1.6rem;
   color: var(--color-coral);
+  font-family: var(--font-heading);
+  letter-spacing: 0.04em;
+  line-height: 29.9px;
 }
-.title > span {
+.experience-duration{
   font-size: 1rem;
+  font-family: var(--font-body);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 28px;
+}
+.company {
+  font-size: 1.25rem;
+  font-family: var(--font-body);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 28px;;
 }
 .experienceCard-container {
   position: relative;
 }
-.company {
-  font-size: 1.25rem;
-}
-.descriptions p {
+
+.descriptions li {
   font-size: 1rem;
+  opacity: 0.9;
 }
 
 /* Is View Container */
@@ -34,27 +47,6 @@
 
   margin: 0.9rem 0;
 }
-.view-button {
-  align-self: center;
-  padding: 5px 10px;
-  border-radius: 5px;
-  border: none;
-
-  font-size: 1.1rem;
-  background-color: var(--color-coral);
-  color: #fff;
-  margin-bottom: 10px;
-  font-family: var(--font-body);
-  cursor: pointer;
-
-  transition: transform 0.2s ease;
-}
-.view-button:hover {
-  transform: scale(1.025);
-  /* background-color: ; */
-  color: var(--color-darkblue);
-}
-
 .challenges-container {
   display: flex;
   flex-direction: column;
@@ -93,12 +85,8 @@
   .title > * {
     width: 100%;
   }
-  .descriptions p {
+  .descriptions li {
     font-size: 0.9rem;
-  }
-  .view-button {
-    padding: 4px 5px;
-    font-size: 1rem;
-    width: 100%;
+    margin-left: 15px;
   }
 }

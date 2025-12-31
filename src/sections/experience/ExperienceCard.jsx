@@ -3,32 +3,32 @@ import { useState } from "react";
 import "./ExperienceCard.css";
 import { challenges } from "../../data/experiencedata";
 import { motion, AnimatePresence, easeInOut } from "framer-motion";
+import Tooltip from "../../components/tooltip/Tooltip";
+import ToogleButton from "../../components/toogleButton/toogleButton";
 
 function ExperienceCard({ role, duration, company, description, isView }) {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="experienceCard">
-      <div className="title">
-        <h3 className="p-josefin">{role}</h3>
-        <span className="p-quicksand">{duration}</span>
+      <div className="title-container">
+        <h3 className="experience-role">{role}</h3>
+        <span className="experience-duration">{duration}</span>
       </div>
-      <h4 className="p-quicksand company">{company}</h4>
+      <h4 className="company">{company}</h4>
 
       <div className="descriptions">
+        <ul>
         {description.map((d, i) => (
-          <p key={i} className="p-quicksand">
+          <li key={i} className="p-quicksand">
             {d}
-          </p>
+          </li>
         ))}
+        </ul>
       </div>
 
       {isView && (
         <div className="isview-container">
-          <button className="view-button" onClick={() => setIsOpen(!isOpen)}>
-            {isOpen
-              ? `Hide My Published Questions`
-              : "View My Published Questions"}
-          </button>
+          <ToogleButton isOpen={isOpen} openText="View My Published Questions" closeText="Hide My Published Questions" onToogle={() => setIsOpen(!isOpen)} />
 
           <AnimatePresence>
             {isOpen && (
@@ -59,6 +59,7 @@ function ExperienceCard({ role, duration, company, description, isView }) {
                     <FaArrowUpRightFromSquare fontSize={12} />
                     <h4 className="ch-title">{c.title}</h4>
                   </motion.a>
+
                 ))}
               </motion.div>
             )}

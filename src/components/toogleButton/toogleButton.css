@@ -1,0 +1,27 @@
+.view-button {
+  align-self: center;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+
+  font-size: 1.1rem;
+  background-color: var(--color-coral);
+  color: #fff;
+  margin-bottom: 10px;
+  font-family: var(--font-body);
+  cursor: pointer;
+
+  transition: transform 0.2s ease;
+}
+.view-button:hover {
+  transform: scale(1.025);
+  color: var(--color-darkblue);
+}
+
+@media (max-width: 750px) {
+    .view-button {
+    padding: 4px 5px;
+    font-size: 1rem;
+    width: 100%;
+  }
+}
