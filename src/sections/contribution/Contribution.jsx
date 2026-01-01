@@ -1,6 +1,6 @@
 import "./Contribution.css";
 import ContributionCard from "./ContributionCard";
-import contribution from "../../data/contributiondata";
+import {contribution} from "../../data/contributiondata";
 
 function Contribution() {
   return (
@@ -17,6 +17,7 @@ function Contribution() {
             description={c.description}
             linkdesc={c.linkdesc}
             link={c.link}
+            isView={c.isView}
           />
         ))}
       </div>
