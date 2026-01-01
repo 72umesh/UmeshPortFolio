@@ -1,12 +1,5 @@
-const contribution = [
-    {
-        title: "Hacktoberfest 2025",
-        description: "Contributed 6+ pull requests to open-source repositories, improving collaboration and Git workflow skills",
-        linkdesc: "View PRs",
-        isView: true,
-        link: "https://github.com/pulls?q=is:pr+author:72umesh+created:2025-09-30..2025-10-31"
-    },
-];
+
+
 const hacktoberfestPRs = [
     {
         repoName:"litmuschaos", 
@@ -41,4 +34,33 @@ const hacktoberfestPRs = [
 
 
 ];
-export { contribution, hacktoberfestPRs };
+
+const opensourcePRs = [
+
+];
+
+const contribution = [
+    {
+        title: "Hacktoberfest 2025",
+        description: "Contributed 6+ pull requests to open-source repositories, improving collaboration and Git workflow skills",
+        linkdesc: "View PRs",
+        isView: true,
+        toggleText: {
+            open: "View Hacktoberfest PRs",
+            close: "Hide Hacktoberfest PRs",
+        },
+        prs: hacktoberfestPRs
+    },
+    // {
+    //     title: "Open Source Contributions",
+    //     description: "Contributed to various open-source projects, enhancing collaboration and software development skills",
+    //     linkdesc: "View PRs",
+    //     isView: true,
+    //     toggleText: {
+    //         open: "View Open Source PRs",
+    //         close: "Hide Open Source PRs",
+    //     },
+    //     prs: opensourcePRs
+    // }
+];
+export { contribution, hacktoberfestPRs, opensourcePRs };

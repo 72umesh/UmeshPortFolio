@@ -2,9 +2,10 @@ import { FaArrowUpRightFromSquare,FaCodeMerge  } from "react-icons/fa6";
 import "./ContributionCard.css";
 import { useState } from "react";
 import ToogleButton from "../../components/toogleButton/toogleButton";
-import { hacktoberfestPRs } from "../../data/contributiondata";
+import AnimatedCollapse from "../../components/animatedCollapse/AnimatedCollapse";
+import { motion } from "framer-motion";
 
-function ContributionCard({ title, description, linkdesc, link, isView }) {
+function ContributionCard({ title, description, linkdesc, link, isView,prs, toggleText }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -21,21 +22,21 @@ function ContributionCard({ title, description, linkdesc, link, isView }) {
       <p className="p-quicksand">{description}</p>
       {isView && (
         <div className="isview-container">
-          <ToogleButton isOpen={isOpen} openText="View PRs" closeText="Hide PRs" onToogle={() => setIsOpen(!isOpen)} />
+          <ToogleButton isOpen={isOpen} openText={toggleText.open} closeText={toggleText.close} onToogle={() => setIsOpen(!isOpen)} />
 
-            {isOpen && (
-              <div className="PRs-container">
-              {hacktoberfestPRs.map((pr, index) => (
-                <div key={index} className="PRs">
+          <AnimatedCollapse isOpen={isOpen} className="PRs-container">
+              {prs.map((pr, index) => (
+                <motion.div key={index} className="PRs"                 initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.15 }}>
                   <h4>
                     <FaCodeMerge color="#a57af0"/> 
                     <a href={pr.url} target="_blank">{pr.title}</a>
                   </h4>
                   <h5>Contributed to {pr.repoName}</h5>
-                </div>
+                </motion.div>
               ))}
-              </div>
-            )}
+          </AnimatedCollapse>
         </div>
       )}
     </div>

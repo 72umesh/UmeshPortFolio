@@ -13,11 +13,7 @@ function Contribution() {
         {contribution.map((c, index) => (
           <ContributionCard
             key={index}
-            title={c.title}
-            description={c.description}
-            linkdesc={c.linkdesc}
-            link={c.link}
-            isView={c.isView}
+            {...c}
           />
         ))}
       </div>
