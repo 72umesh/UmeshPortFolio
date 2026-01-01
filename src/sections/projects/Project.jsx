@@ -28,13 +28,7 @@ function Project() {
           filteredProjects.map((data) => (
             <ProjectDiv
               key={data.id}
-              title={data.title}
-              img={data.img}
-              description={data.description}
-              technologies={data.technologies}
-              demo={data.demo}
-              github={data.github}
-              isNew={data.isNew}
+              {...data}
             />
           ))
         ) : (
@@ -52,11 +46,7 @@ function Project() {
         {dashboardData.map((dashboard) => (
           <DashBoardCard
             key={dashboard.id}
-            title={dashboard.title}
-            img={dashboard.img}
-            description={dashboard.description}
-            github={dashboard.github}
-            demo={dashboard.demo}
+            {...dashboard}
           />
         ))}
       </div>

@@ -1,6 +1,9 @@
 import { techMap } from "../../data/technologiesData";
 import { FaRegPlayCircle } from "react-icons/fa";
 import "./ProjectDiv.css";
+import Tooltip from "../tooltip/Tooltip";
+import { FaGithub } from "react-icons/fa";
+import { CiGlobe } from "react-icons/ci";
 
 function ProjectDiv(props) {
   function handledemo() {
@@ -27,18 +30,29 @@ function ProjectDiv(props) {
           <span className="techstackIcon">
             {props.technologies?.map((tech, index) => {
               const Icon = techMap[tech];
-              return <Icon key={index} />;
+              const captalizedTech = () => tech.charAt(0).toUpperCase() + tech.slice(1);
+
+              return(
+                <Tooltip key={index} text={captalizedTech(tech)}>
+                  <Icon key={index} />
+                  </Tooltip>
+              )
             })}
           </span>
         </h3>
         <p className="desc">{props.description}</p>
         <div class="projects-buttons">
-          <button class="project-btn" onClick={handlegithub}>
-            Github
-          </button>
-          <button class="project-btn" onClick={handledemo}>
-            Live Demo
-          </button>
+          <Tooltip text="View Source Code on Github">
+            <button class="project-btn flex-center" onClick={handlegithub}>
+            <FaGithub fontSize={20}/> Github
+            </button>
+          </Tooltip>
+
+          <Tooltip text="View live Website">
+            <button class="project-btn flex-center" onClick={handledemo}>
+              <CiGlobe fontSize={20} />Live Demo
+            </button>
+          </Tooltip>
         </div>
       </div>
     </div>
