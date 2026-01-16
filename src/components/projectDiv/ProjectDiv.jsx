@@ -4,13 +4,16 @@ import "./ProjectDiv.css";
 import Tooltip from "../tooltip/Tooltip";
 import { FaGithub } from "react-icons/fa";
 import { CiGlobe } from "react-icons/ci";
+import { trackEvent } from "../../utils/analytics";
 
 function ProjectDiv(props) {
   function handledemo() {
     window.open(props.demo, "_blank");
+    trackEvent(`project_demo_${props.title.toLowerCase()}_click`);
   }
   function handlegithub() {
     window.open(props.github, "_blank");
+    trackEvent(`project_github_${props.title.toLowerCase()}_click`);
   }
 
   return (
@@ -21,7 +24,7 @@ function ProjectDiv(props) {
       <div className="project-image" onClick={handledemo}>
         <img src={props.img} />
         <p className="play">
-          <FaRegPlayCircle className="play-icon" />
+          <FaRegPlayCircle className="play-icon"/>
         </p>
       </div>
       <div className="project-descriptions">

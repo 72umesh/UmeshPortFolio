@@ -4,6 +4,7 @@ import { useState } from "react";
 import ToogleButton from "../../components/toogleButton/toogleButton";
 import AnimatedCollapse from "../../components/animatedCollapse/AnimatedCollapse";
 import { motion } from "framer-motion";
+import { trackEvent } from "../../utils/analytics";
 
 function ContributionCard({ title, description, linkdesc, link, isView,prs, toggleText }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,7 +23,7 @@ function ContributionCard({ title, description, linkdesc, link, isView,prs, togg
       <p className="p-quicksand">{description}</p>
       {isView && (
         <div className="isview-container">
-          <ToogleButton isOpen={isOpen} openText={toggleText.open} closeText={toggleText.close} onToogle={() => setIsOpen(!isOpen)} />
+          <ToogleButton isOpen={isOpen} openText={toggleText.open} closeText={toggleText.close} onToogle={() => {setIsOpen(!isOpen); trackEvent("experience_hacktoberfest_click")}} />
 
           <AnimatedCollapse isOpen={isOpen} className="PRs-container">
               {prs.map((pr, index) => (

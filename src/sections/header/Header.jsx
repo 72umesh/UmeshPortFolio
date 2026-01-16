@@ -1,10 +1,15 @@
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaTimes } from "react-icons/fa";
 import { useState } from "react";
+import { trackEvent } from "../../utils/analytics";
 import "./Header.css";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
+
+  const handleNav = (section) => {
+    trackEvent(`nav_${section}`);
+  };
 
   return (
     <header>
@@ -15,27 +20,27 @@ function Header() {
 
         <ul className="nav-links">
           <li>
-            <a href="#home" className="p-quicksand">
+            <a href="#home" className="p-quicksand" onClick={() => handleNav('home')}>
               Home.
             </a>
           </li>
           <li>
-            <a href="#about" className="p-quicksand">
+            <a href="#about" className="p-quicksand" onClick={() => handleNav('about')}>
               About.
             </a>
           </li>
           <li>
-            <a href="#experience" className="p-quicksand">
+            <a href="#experience" className="p-quicksand" onClick={() => handleNav('experience')}>
               Experience.
             </a>
           </li>
           <li>
-            <a href="#projects" className="p-quicksand">
+            <a href="#projects" className="p-quicksand" onClick={() => handleNav('projects')}>
               Projects.
             </a>
           </li>
           <li>
-            <a href="#contact" className="p-quicksand">
+            <a href="#contact" className="p-quicksand" onClick={() => handleNav('contact')}>
               Contact.
             </a>
           </li>
@@ -59,7 +64,7 @@ function Header() {
                 <li>
                   <a
                     href="#home"
-                    onClick={() => setIsOpen(false)}
+                    onClick={() => {setIsOpen(false); handleNav('home')} }
                     className="p-quicksand"
                   >
                     Home.
@@ -68,7 +73,7 @@ function Header() {
                 <li>
                   <a
                     href="#skills"
-                    onClick={() => setIsOpen(false)}
+                    onClick={() => {setIsOpen(false); handleNav('about')} }
                     className="p-quicksand"
                   >
                     About.
@@ -77,7 +82,7 @@ function Header() {
                 <li>
                   <a
                     href="#experience"
-                    onClick={() => setIsOpen(false)}
+                    onClick={() => {setIsOpen(false); handleNav('experience')} }
                     className="p-quicksand"
                   >
                     Experience.
@@ -86,7 +91,7 @@ function Header() {
                 <li>
                   <a
                     href="#projects"
-                    onClick={() => setIsOpen(false)}
+                    onClick={() => {setIsOpen(false); handleNav('project')} }
                     className="p-quicksand"
                   >
                     Projects.
@@ -95,7 +100,7 @@ function Header() {
                 <li>
                   <a
                     href="#contact"
-                    onClick={() => setIsOpen(false)}
+                    onClick={() => {setIsOpen(false); handleNav('contact')} }
                     className="p-quicksand"
                   >
                     Contact.

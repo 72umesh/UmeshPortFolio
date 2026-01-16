@@ -6,6 +6,7 @@ import { motion, AnimatePresence, easeInOut } from "framer-motion";
 import Tooltip from "../../components/tooltip/Tooltip";
 import ToogleButton from "../../components/toogleButton/toogleButton";
 import AnimatedCollapse from "../../components/animatedCollapse/AnimatedCollapse";
+import { trackEvent } from "../../utils/analytics";
 
 function ExperienceCard({ role, duration, company, description, isView }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,7 +34,7 @@ function ExperienceCard({ role, duration, company, description, isView }) {
             isOpen={isOpen}
             openText="View My Published Questions"
             closeText="Hide My Published Questions"
-            onToogle={() => setIsOpen(!isOpen)}
+            onToogle={() => {setIsOpen(!isOpen); trackEvent("experience_namastedev_click")}}
           />
 
           <AnimatedCollapse isOpen={isOpen} className="challenges-container">

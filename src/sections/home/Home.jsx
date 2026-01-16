@@ -5,10 +5,13 @@ import "./Home.css";
 import MacFrame from "../../components/macframe/MacFrame";
 import contactdetails from "../../data/homedata";
 import Tooltip from "../../components/tooltip/Tooltip";
+import { trackEvent } from "../../utils/analytics";
 
 function Home() {
   function handleViewResume() {
     window.open(Resume, "_blank");
+
+    trackEvent("resume_click");
   }
   function handleScrollToProjects() {
     const projectsSection = document.getElementById("projects");
@@ -21,7 +24,12 @@ function Home() {
       "https://vimeo.com/1121443866?share=copy&fl=sv&fe=ci",
       "_blank"
     );
+      trackEvent("intro_video_click");
   }
+
+  const handleIcons = (section) => {
+    trackEvent(`${section}`);
+  };
   return (
     <section id="home" className="wrapper section-padding">
       <div className="circle-right"></div>
@@ -64,7 +72,7 @@ function Home() {
           {
           contactdetails.map((contact) => (
             <Tooltip key={contact.title} text={contact.title}>
-              <a href={contact.url} target="_blank" rel="noopener noreferrer" className="contacta">
+              <a href={contact.url} target="_blank" rel="noopener noreferrer" className="contacta" onClick={() => handleIcons(contact.event_name)} >
                 {<contact.Logo />}
               </a>
             </Tooltip>
