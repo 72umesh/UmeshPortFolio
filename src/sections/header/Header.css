@@ -105,6 +105,7 @@ nav {
   }
   .nav-smallscreen {
     display: flex;
+    z-index: 100;
   }
 }
 @media (max-width: 600px) {
