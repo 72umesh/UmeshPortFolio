@@ -32,7 +32,7 @@ body {
   padding: 4rem 6rem;
 }
 section {
-  scroll-margin-top: 40px;
+  scroll-margin-top: 0px;
 }
 .slide-bottom {
   animation: slide-bottom 0.5s ease;

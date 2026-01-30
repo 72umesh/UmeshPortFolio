@@ -2,9 +2,50 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+.section-subtitle {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+.section-subtitle::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-coral), transparent);
+  border-radius: 2px;
+}
+
+/* Featured Section */
+.featured-section {
+  width: 100%;
+  margin-bottom: 4rem;
+  padding: 0 1rem;
+}
+.featured-container {
+  display: grid;
+  gap: 2rem;
+  width: 80%;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 500px), 1fr));
 }
 
 /* Projects  */
+
+.projects-section {
+  width: 100%;
+  margin-bottom: 4rem;
+  padding: 0 1rem;
+}
 .projects-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));

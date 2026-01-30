@@ -2,11 +2,11 @@ import MovieList from "../assets/MovieList.png";
 import Maharaja from "../assets/Maharaja.png";
 import StoreX from "../assets/StoreX.png";
 import WidgetHub from "../assets/WidgetHub.png";
-import Documentation from "../assets/Documentation.png";
 import OsloDashBoard from "../assets/Oslo_DashBoard.png";
 import HealthCareDashBoard from "../assets/Healthcare_DashBoard.png";
-import TripWave from "../assets/Tripwave.png"
-import { techMap } from "./technologiesData";
+import TripWave from "../assets/Tripwave.png";
+import flowIcon from "../assets/flow-128.png";
+import demoVideo from "../assets/DemoVideo.mp4"
 
 const projectData = [
   // React.js
@@ -28,10 +28,10 @@ const projectData = [
     github: "https://github.com/72umesh/MovieList/",
     demo: "https://72umesh.github.io/MovieList/",
     stack: "React, CSS, REST API",
-    technologies: ["react", "css",],
+    technologies: ["react", "css"],
     description:
       "A responsive React movie app with search, pagination, and a Favorites page using Hooks and an external API.",
-    categories: "React.js"
+    categories: "React.js",
   },
   {
     id: 3,
@@ -43,8 +43,7 @@ const projectData = [
     technologies: ["react", "css"],
     description:
       "Developed a visually appealing and fully responsive restaurant website, using React and styled with CSS",
-    categories: "React.js"
-
+    categories: "React.js",
   },
   // HTML/CSS
 
@@ -57,7 +56,7 @@ const projectData = [
     technologies: ["html", "bootstrap"],
     description:
       "Designed a responsive Bootstrap product page with seamless navigation and dedicated sections.",
-    categories: "HTML/CSS"
+    categories: "HTML/CSS",
   },
   // {
   //   id: 5,
@@ -77,10 +76,11 @@ const projectData = [
     github: "https://github.com/72umesh/TripWave",
     demo: "https://tripwave.vercel.app/",
     technologies: ["nextjs", "typescript", "tailwind"],
-    description: "TripWave is a modern travel website that helps users discover destinations, explore trips, and plan journeys with an intuitive interface.",
+    description:
+      "TripWave is a modern travel website that helps users discover destinations, explore trips, and plan journeys with an intuitive interface.",
     categories: "Next.js",
-    isNew: true
-  }
+    isNew: true,
+  },
 ];
 const dashboardData = [
   {
@@ -101,4 +101,16 @@ const dashboardData = [
     description: "CRM dashboard for chats, campaigns, and lead management.",
   },
 ];
-export { projectData, dashboardData };
+const featuredData = [
+  {
+    id: "swiftflow",
+    title: "SwiftFlow - Chrome Extension",
+    description:
+      "A privacy-first, offline bookmark manager that adds instant saves with searchable notes, categories, drag-and-drop ordering, and trash recovery fixing Chrome's defaults without accounts or bloat.",
+    icon: flowIcon,
+    iconAlt: "SwiftFlow Icon",
+    demoVideo: demoVideo,
+    externalLink:"https://chromewebstore.google.com/detail/ehcdpdhfpdakeikhhdllpjfmhhmkmebm?utm_source=item-share-cb"
+  },
+];
+export { projectData, dashboardData, featuredData };
