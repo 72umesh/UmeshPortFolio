@@ -169,3 +169,18 @@
 
 
 
+@media (max-width: 600px) {
+  .featured-card {
+    grid-template-columns: 1fr;
+    /* text-align: center; */
+  }
+  .featured-card-icon {
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+  }
+  .featured-card-actions{
+    flex-direction: column;
+  }
+
+}

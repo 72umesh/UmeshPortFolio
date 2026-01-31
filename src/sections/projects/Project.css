@@ -29,7 +29,7 @@
 /* Featured Section */
 .featured-section {
   width: 100%;
-  margin-bottom: 4rem;
+  margin: 3rem 0 4rem;
   padding: 0 1rem;
 }
 .featured-container {
@@ -92,5 +92,12 @@
   .dashboard-container {
     grid-template-columns: 1fr;
     padding: 0;
+  }
+}
+
+/* Featured Section */
+@media(max-width:1200px){
+  .featured-container{
+    width: 100%;
   }
 }
