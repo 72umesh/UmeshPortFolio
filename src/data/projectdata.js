@@ -6,7 +6,7 @@ import OsloDashBoard from "../assets/Oslo_DashBoard.png";
 import HealthCareDashBoard from "../assets/Healthcare_DashBoard.png";
 import TripWave from "../assets/Tripwave.png";
 import flowIcon from "../assets/flow-128.png";
-import demoVideo from "../assets/DemoVideo.mp4"
+import demoVideo from "../assets/SwiftFlowDemoVideo.mp4"
 
 const projectData = [
   // React.js
