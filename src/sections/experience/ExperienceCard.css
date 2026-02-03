@@ -81,6 +81,9 @@
   .title-container{
     flex-direction: column;
   }
+  .title-container > * {
+    width: 100%
+  }
   .experience-role{
     font-size: 1.3rem;
   }
