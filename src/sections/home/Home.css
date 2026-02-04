@@ -106,7 +106,8 @@
 }
 @media screen and (max-width: 650px) {
   .section-padding {
-    padding: 4rem 2rem;
+
+    padding: 1.4rem 1rem;
   }
   .home-buttons {
     width: 100%;

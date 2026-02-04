@@ -73,4 +73,8 @@
   .portfolio-container {
     display: block;
   }
+  .circle-left, .circle-right{
+    /* display: none; */
+    width: 150px;
+  }
 }
