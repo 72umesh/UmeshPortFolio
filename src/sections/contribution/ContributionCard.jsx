@@ -13,12 +13,12 @@ function ContributionCard({ title, description, linkdesc, link, isView,prs, togg
     <div className="contributionCard">
       <div className="title-div">
         <h3 className="p-josefin">{title}</h3>
-        <p className="view-link">
+        {/* <p className="view-link">
           <a href={link} target="_blank" className="p-quicksand">
             <FaArrowUpRightFromSquare />
             {linkdesc}
           </a>
-        </p>
+        </p> */}
       </div>
       <p className="p-quicksand">{description}</p>
       {isView && (
