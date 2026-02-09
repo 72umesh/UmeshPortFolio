@@ -1,80 +1,74 @@
-.p-josefin {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  line-height: 29.9px;
-  font-size: 2.6rem;
-}
-.p-quicksand {
-  font-family: var(--font-body);
-  font-weight: 400;
-  letter-spacing: 0.04em;
-  line-height: 28px;
-  font-size: 1.5rem;
-}
-.sectionh1 {
-  font-family: var(--font-heading);
-  font-size: 2.5rem;
-  font-weight: 400;
-  text-align: center;
-}
-.flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  min-height: 90vh;
-}
-.portfolio-container {
+/* App Layout */
+.portfolio-container{
   width: 100%;
-  overflow: hidden;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 0;
+  position: relative;
+  overflow-x: hidden;
+  z-index: var(--z-base);
 }
 .portfolio-main {
   max-width: 1900px;
   width: 100%;
   z-index: 5;
 }
+.portfolio-main{
+  width: 100%;
+  max-width: var(--container-2xl);
+  position: relative;
+  z-index: 5;
+}
 
-.circle-right {
+/* Gradient BackGround */
+.gradient-orb{
   position: absolute;
+  border-radius: 50%;
+  background-color: var(--color-darkcoral);
+  filter: blur(200px);
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.8;
+}
+.gradient-orb-right {
   width: 500px;
   height: 500px;
-  background-color: var(--color-darkcoral);
-  border-radius: 50%;
-  filter: blur(200px);
-
-  z-index: 2;
-
   top: -100px;
   right: -100px;
 }
-.circle-left {
-  position: absolute;
+.gradient-orb-left {
   width: 500px;
   height: 500px;
-  background-color: var(--color-darkcoral);
-  border-radius: 50%;
-  filter: blur(200px);
-
-  z-index: 2;
-
   top: -150px;
   left: -150px;
 }
-@media (max-width: 600px) {
+
+/* Utlities */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .section-title */
+.sectionh1{
+  font-family: var(--font-heading);
+  font-size: var(--text-4xl);
+  font-weight: var(--font-semibold);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .sectionh1 {
+    font-size: var(--text-3xl);
+  }
+}
+@media (max-width: 640px) {
   .portfolio-container {
     display: block;
   }
-  .circle-left, .circle-right{
-    /* display: none; */
+  .gradient-orb-right, .gradient-orb-left{
     width: 150px;
   }
 }
