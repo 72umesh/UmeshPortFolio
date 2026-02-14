@@ -1,11 +1,14 @@
+import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaTimes } from "react-icons/fa";
-import { useState } from "react";
 import { trackEvent } from "../../utils/analytics";
+import NavItems from "../../data/headerdata";
 import "./Header.css";
 
 function Header() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSelection, setActiveSelection] = useState("home");
 
   const handleNav = (section) => {
     trackEvent(`nav_${section}`);
@@ -19,45 +22,25 @@ function Header() {
         </div>
 
         <ul className="nav-links">
-          <li>
-            <a href="#home" className="p-quicksand" onClick={() => handleNav('home')}>
-              Home.
-            </a>
-          </li>
-          <li>
-            <a href="#about" className="p-quicksand" onClick={() => handleNav('about')}>
-              About.
-            </a>
-          </li>
-          <li>
-            <a href="#experience" className="p-quicksand" onClick={() => handleNav('experience')}>
-              Experience.
-            </a>
-          </li>
-          <li>
-            <a href="#projects" className="p-quicksand" onClick={() => handleNav('projects')}>
-              Projects.
-            </a>
-          </li>
-          <li>
-            <a href="#contact" className="p-quicksand" onClick={() => handleNav('contact')}>
-              Contact.
-            </a>
-          </li>
+          {NavItems.map((navlink) =>(
+            <li key={navlink.id}>
+              <a href={navlink.href}>{navlink.label}</a>
+            </li>
+          ))}
         </ul>
 
         <div className="nav-smallscreen">
           <GiHamburgerMenu
             fontSize={27}
-            onClick={() => setIsOpen(true)}
+ 
             style={{ cursor: "pointer" }}
           />
 
-          {isOpen && (
+          {isMenuOpen && (
             <div className="smallscreen-overlay flex-center slide-bottom">
               <FaTimes
                 fontSize={27}
-                onClick={() => setIsOpen(false)}
+
                 className="overlay-close"
               />
               <ul class="nav-smallscreen-links">
