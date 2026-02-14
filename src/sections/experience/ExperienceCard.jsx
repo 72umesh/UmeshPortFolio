@@ -1,28 +1,32 @@
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { useState } from "react";
 import "./ExperienceCard.css";
-import { challenges } from "../../data/experiencedata";
-import { motion, AnimatePresence, easeInOut } from "framer-motion";
-import Tooltip from "../../components/tooltip/Tooltip";
+import { Challenges } from "../../data/experiencedata";
+import { motion } from "framer-motion";
 import ToogleButton from "../../components/toogleButton/toogleButton";
 import AnimatedCollapse from "../../components/animatedCollapse/AnimatedCollapse";
 import { trackEvent } from "../../utils/analytics";
 
 function ExperienceCard({ role, duration, company, description, isView }) {
   const [isOpen, setIsOpen] = useState(false);
-  return (
-    <div className="experienceCard">
-      <div className="title-container">
-        <h3 className="experience-role">{role}</h3>
-        <span className="experience-duration">{duration}</span>
-      </div>
-      <h4 className="company">{company}</h4>
 
-      <div className="descriptions">
-        <ul>
-          {description.map((d, i) => (
-            <li key={i} className="p-quicksand">
-              {d}
+  const handleToggle = () => {
+    setIsOpen(!isOpen);
+    trackEvent("experience_namastedev_click");
+  };
+  return (
+    <div className="experience-card">
+      <div className="experience-content">
+        <div className="experience-header">
+          <h3 className="experience-role">{role}</h3>
+          <span className="experience-duration">{duration}</span>
+        </div>
+        <h4 className="experience-company">{company}</h4>
+
+        <ul className="experience-descriptions">
+          {description.map((desc, i) => (
+            <li key={i} className="description-item">
+              {desc}
             </li>
           ))}
         </ul>
@@ -34,24 +38,23 @@ function ExperienceCard({ role, duration, company, description, isView }) {
             isOpen={isOpen}
             openText="View My Published Questions"
             closeText="Hide My Published Questions"
-            onToogle={() => {setIsOpen(!isOpen); trackEvent("experience_namastedev_click")}}
+            onToogle={handleToggle}
           />
 
           <AnimatedCollapse isOpen={isOpen} className="challenges-container">
-            {challenges.map((c,i) => (
+            {Challenges.map((c, i) => (
               <motion.a
                 key={c.title}
                 href={c.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="ch-link"
-    
+                className="challenge-link"
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.10 }}
+                transition={{ delay: i * 0.1 }}
               >
                 <FaArrowUpRightFromSquare fontSize={12} />
-                <h4 className="ch-title">{c.title}</h4>
+                <span className="challenge-title">{c.title}</span>
               </motion.a>
             ))}
           </AnimatedCollapse>

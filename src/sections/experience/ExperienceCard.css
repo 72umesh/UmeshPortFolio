@@ -1,41 +1,75 @@
-.experienceCard {
-  padding: 15px 50px;
-  z-index: 3;
+.experience-card {
   position: relative;
-}
-.experienceCard > .title-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.experience-role{
-  font-size: 1.6rem;
-  color: var(--color-coral);
-  font-family: var(--font-heading);
-  letter-spacing: 0.04em;
-  line-height: 29.9px;
-}
-.experience-duration{
-  font-size: 1rem;
-  font-family: var(--font-body);
-  font-weight: 400;
-  letter-spacing: 0.04em;
-  line-height: 28px;
-}
-.company {
-  font-size: 1.25rem;
-  font-family: var(--font-body);
-  font-weight: 400;
-  letter-spacing: 0.04em;
-  line-height: 28px;;
-}
-.experienceCard-container {
-  position: relative;
+  margin-bottom: var(--space-6);
 }
 
-.descriptions li {
-  font-size: 1rem;
-  opacity: 0.9;
+/* Timeline Line */
+.experience-content {
+  position: relative;
+  padding-left: var(--space-3); 
+}
+.experience-content::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background-color: var(--color-coral);
+  border-radius:var(--radius-sm)
+}
+
+
+/* Header */
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: var(--space-1);
+}
+.experience-role {
+  font-size: var(--text-2xl);
+  font-family: var(--font-heading);
+  font-weight: var(--font-bold);
+  color: var(--color-coral);
+  letter-spacing: var(--tracking-wide);
+  line-height: var(--leading-tight);
+}
+.experience-duration {
+  font-size: var(--text-base);
+  font-family: var(--font-body);
+  font-weight: var(--font-normal);
+  color: var(--color-text-secondary);
+  letter-spacing: var(--tracking-wide);
+  white-space: nowrap;
+}
+
+/* Company */
+.experience-company {
+  font-size: var(--text-xl);
+  font-family: var(--font-body);
+  font-weight: var(--font-medium);
+  color: var(--color-text-secondary);
+  letter-spacing: var(--tracking-wide);
+  margin-bottom: var(--space-1);
+  line-height: var(--leading-snug);
+}
+
+/* Description */
+.experience-descriptions {
+  list-style: square;
+  padding-left: var(--space-4);
+  margin-bottom: var(--space-2);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+.description-item {
+  font-size: var(--text-base);
+  font-family: var(--font-body);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+  opacity: 0.95;
 }
 
 /* Is View Container */
@@ -45,57 +79,93 @@
   display: flex;
   flex-direction: column;
 
-  margin: 0.9rem 0;
+  margin-top: var(--space-2);
+  padding-top: var(--space-4);
 }
 .challenges-container {
   display: flex;
   flex-direction: column;
-
-  margin: 0 auto;
-  gap: 15px;
-
+  gap: var(--space-2);
+  margin: var(--space-3) auto 0;
+  padding-top: var(--space-1);
   overflow: hidden;
-  padding: 10px 0;
 }
-.ch-link {
-  color: #fff;
+.challenge-link {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--space-2);
+  color: #fff;
   transition: all 0.3s ease-in;
   font-family: var(--font-body);
+  text-decoration: underline;
 }
-.ch-link:hover {
+.challenge-link:hover {
   color: var(--color-coral);
 }
-.ch-title {
-  font-size: 1.1rem;
-  font-weight: 100;
+.challenge-title {
+  font-size: var(--text-lg);
+  font-weight: var(--font-light);
+  line-height: var(--leading-snug);
 }
 
-@media (max-width: 750px) {
-  .experienceCard {
-    padding: 10px 15px;
-    margin-top: 1.6rem;
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .experience-role {
+    font-size: var(--text-xl);
   }
-  .title-container{
+  .experience-company {
+    font-size: var(--text-lg);
+  }
+}
+
+@media (max-width: 768px) {
+  .experience-header {
     flex-direction: column;
+    gap: var(--space-1);
   }
-  .title-container > * {
-    width: 100%
-  }
-  .experience-role{
-    font-size: 1.3rem;
-  }
-  .experience-duration{
-    font-size: 0.9rem;
-  }
-  .company {
-    font-size: 1rem;
+  .experience-role {
+    font-size: var(--text-xl);
   }
 
-  .descriptions li {
-    font-size: 0.8rem;
-    margin-left: 15px;
+  .experience-duration {
+    font-size: var(--text-sm);
+  }
+
+  .experience-company {
+    font-size: var(--text-base);
+    margin-bottom: var(--space-2);
+  }
+
+  .description-item {
+    font-size: var(--text-sm);
+  }
+  .experience-description {
+    padding-left: var(--space-4);
+    gap: var(--space-1);
+  }
+
+  .challenge-title {
+    font-size: var(--text-base);
+  }
+}
+
+@media (max-width: 640px) {
+  .experience-role {
+    font-size: var(--text-lg);
+  }
+
+  .experience-company {
+    font-size: var(--text-sm);
+  }
+
+  .description-item {
+    font-size: var(--text-sm);
+  }
+  .challenges-container {
+    gap: var(--space-3);
+  }
+
+  .challenge-title {
+    font-size: var(--text-sm);
   }
 }

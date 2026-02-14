@@ -1,7 +1,7 @@
-const experiences = [
+const Experiences = [
   {
     role: "Freelance Frontend Contributor",
-    duration: "Jul 25 - Present",
+    duration: "Jul 25 - Dec 25",
     company: "Namastedev",
     description: [
       "Designed and authored 22+ React.js and JavaScript coding challenges for an interview-focused practice platform",
@@ -21,7 +21,7 @@ const experiences = [
     ],
   },
 ];
-const challenges = [
+const Challenges = [
   { title: "Copy to Clipboard", link: "https://namastedev.com/practice/copy-to-clipboard" },
   { title: "Back to Top", link: "https://namastedev.com/practice/back-to-top" },
   { title: "Character Counter", link: "https://namastedev.com/practice/character-counter" },
@@ -34,4 +34,4 @@ const challenges = [
   { title: "Auto Save Form", link: "https://namastedev.com/practice/auto-save-form" },
 
 ]
-export { experiences, challenges };
+export { Experiences, Challenges };
