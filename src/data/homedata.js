@@ -2,7 +2,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 
-const contactdetails = [
+const ContactDetails = [
     {
         title:"Twitter",
         Logo: FaXTwitter,
@@ -29,4 +29,4 @@ const contactdetails = [
     }
 ]
 
-export default contactdetails;
+export default ContactDetails;
