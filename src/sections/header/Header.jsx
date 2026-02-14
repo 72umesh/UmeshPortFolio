@@ -7,11 +7,10 @@ import "./Header.css";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [activeSelection, setActiveSelection] = useState("home");
 
-  const handleNav = (section) => {
+  const handleNavClick = (section) => {
     trackEvent(`nav_${section}`);
+    setIsMenuOpen(false);
   };
 
   return (
@@ -21,74 +20,48 @@ function Header() {
           <p className="navbar-logo-name">Umesh Pal.</p>
         </div>
 
+        {/* Desktop Navigation */}
         <ul className="nav-links">
-          {NavItems.map((navlink) =>(
+          {NavItems.map((navlink) => (
             <li key={navlink.id}>
-              <a href={navlink.href}>{navlink.label}</a>
+              <a
+                href={navlink.href}
+                className={`nav-link`}
+                onClick={() => handleNavClick(navlink.id)}
+              >
+                {navlink.label}
+              </a>
             </li>
           ))}
         </ul>
 
+        {/* Mobile  */}
         <div className="nav-smallscreen">
           <GiHamburgerMenu
             fontSize={27}
- 
             style={{ cursor: "pointer" }}
+            onClick={() => setIsMenuOpen(true)}
           />
 
           {isMenuOpen && (
-            <div className="smallscreen-overlay flex-center slide-bottom">
+            <div className="smallscreen-overlay slide-bottom">
               <FaTimes
                 fontSize={27}
-
                 className="overlay-close"
+                onClick={() => setIsMenuOpen(false)}
               />
-              <ul class="nav-smallscreen-links">
-                <li>
-                  <a
-                    href="#home"
-                    onClick={() => {setIsOpen(false); handleNav('home')} }
-                    className="p-quicksand"
-                  >
-                    Home.
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#skills"
-                    onClick={() => {setIsOpen(false); handleNav('about')} }
-                    className="p-quicksand"
-                  >
-                    About.
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#experience"
-                    onClick={() => {setIsOpen(false); handleNav('experience')} }
-                    className="p-quicksand"
-                  >
-                    Experience.
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#projects"
-                    onClick={() => {setIsOpen(false); handleNav('project')} }
-                    className="p-quicksand"
-                  >
-                    Projects.
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#contact"
-                    onClick={() => {setIsOpen(false); handleNav('contact')} }
-                    className="p-quicksand"
-                  >
-                    Contact.
-                  </a>
-                </li>
+              <ul className="nav-smallscreen-links">
+                {NavItems.map((item, index) => (
+                  <li key={item.id}>
+                    <a
+                      href={item.href}
+                      onClick={() => handleNavClick(item.id)}
+                      className={`mobile-nav-link`}
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
           )}
