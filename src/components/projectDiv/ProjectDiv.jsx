@@ -17,43 +17,54 @@ function ProjectDiv(props) {
   }
 
   return (
-    <div className="project-div">
-      <h2 className="project-title">{props.title}</h2>
-      {props.isNew && <div className="new-badge">✨New</div>}
+    <div className="project-card">
+      {/* {props.isNew && <div className="project-badge">✨ New</div>} */}
 
-      <div className="project-image" onClick={handledemo}>
-        <img src={props.img} />
-        <p className="play">
-          <FaRegPlayCircle className="play-icon"/>
-        </p>
+      {/* Project Image */}
+      <div className="project-image-wrapper" onClick={handledemo}>
+        <img
+          src={props.img}
+          alt={`${props.title} project preview`}
+          className="project-image"
+        />
+        <div className="project-overlay">
+          <FaRegPlayCircle className="play-icon" />
+        </div>
       </div>
-      <div className="project-descriptions">
-        <h3 className="techStack">
-          Tech:{" "}
-          <span className="techstackIcon">
+
+      {/* Project Content */}
+      <div className="project-content">
+        <h4 className="project-title">{props.title}</h4>
+        <div className="project-tech">
+          <span className="tech-label">Technologies: </span>
+          <div className="tech-icons">
             {props.technologies?.map((tech, index) => {
               const Icon = techMap[tech];
-              const captalizedTech = () => tech.charAt(0).toUpperCase() + tech.slice(1);
+              const captalizedTech = () =>
+                tech.charAt(0).toUpperCase() + tech.slice(1);
 
-              return(
-                <Tooltip key={index} text={captalizedTech(tech)}>
+              return (
+                <Tooltip key={`${tech}-${index}`} text={captalizedTech(tech)}>
                   <Icon key={index} />
-                  </Tooltip>
-              )
+                </Tooltip>
+              );
             })}
-          </span>
-        </h3>
-        <p className="desc">{props.description}</p>
-        <div class="projects-buttons">
+          </div>
+        </div>
+
+        <p className="project-description">{props.description}</p>
+
+        <div class="projects-actions">
           <Tooltip text="View Source Code on Github">
             <button class="project-btn flex-center" onClick={handlegithub}>
-            <FaGithub fontSize={20}/> Github
+              <FaGithub fontSize={20} /> Github
             </button>
           </Tooltip>
 
           <Tooltip text="View live Website">
             <button class="project-btn flex-center" onClick={handledemo}>
-              <CiGlobe fontSize={20} />Live Demo
+              <CiGlobe fontSize={20} />
+              Live Demo
             </button>
           </Tooltip>
         </div>

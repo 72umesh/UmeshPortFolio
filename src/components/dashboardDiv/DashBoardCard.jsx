@@ -2,22 +2,27 @@ import "./DashBoardCard.css";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 
-function DashBoardCard(dashboard) {
+function DashBoardCard({id, title, description, img, demo, github}) {
   function handledemo() {
-    window.open(dashboard.demo, "_blank");
+    if (demo) {
+      window.open(demo, "_blank");
+    }
   }
   function handlegithub() {
-    window.open(dashboard.github, "_blank");
+    if (github) {
+      window.open(github, "_blank");
+    }
   }
   return (
-    <div className="dashboardCard">
-      <div className="d-card-img">
-        <img src={dashboard.img} alt={dashboard.title} />
+    <div className="dashboard-card">
+      <div className="dashboard-image-wrapper">
+        <img src={img} alt={`${title} dashboard preview`} className="dashboard-image" />
       </div>
-      <div className="d-card-descriptions">
-        <h3 className="d-card-title">{dashboard.title} </h3>
-        <h4 className="d-card-desc">{dashboard.description}</h4>
-        <div className="d-card-buttons">
+      <div className="dashboard-content">
+        <h4 className="dashboard-title">{title} </h4>
+        <p className="dashboard-description">{description}</p>
+        
+        <div className="dashboard-actions">
           <button onClick={handlegithub}>
             <FaGithub fontSize={20} /> <span>Github</span>
           </button>

@@ -2,14 +2,16 @@ import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import "./FeaturedCard.css";
 import { useState } from "react";
 import { IoCloseOutline } from "react-icons/io5";
-import {trackEvent} from "../../utils/analytics";
+import { trackEvent } from "../../utils/analytics";
+import Button from "../button/Button";
 
 export default function FeaturedCard({
   title,
   description,
   icon,
   iconAlt,
-  demoVideo, externalLink,
+  demoVideo,
+  externalLink,
 }) {
   const [showVideo, setShowVideo] = useState(false);
 
@@ -33,15 +35,15 @@ export default function FeaturedCard({
 
   return (
     <div className="featured-card">
-      <div className="featured-card-icon">
+      <div className="featured-icon">
         <img src={icon} alt={iconAlt} loading="lazy" />
       </div>
 
-      <div className="featured-card-content">
-        <h3 className="featured-card-title">{title}</h3>
-        <p className="featured-card-description">{description}</p>
+      <div className="featured-content">
+        <h4 className="featured-title">{title}</h4>
+        <p className="featured-description">{description}</p>
 
-        <div className="featured-card-actions">
+        <div className="featured-actions">
           <button className="featured-btn" onClick={handleDemoClick}>
             <FaArrowUpRightFromSquare />
             View Demo
