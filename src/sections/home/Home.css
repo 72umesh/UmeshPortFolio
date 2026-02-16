@@ -3,12 +3,20 @@
   align-items: center;
   justify-content: center;
   max-width: var(--container-md);
-  margin: 4rem auto;
+  margin: 8rem auto;
 }
 
 .home-content {
   display: flex;
   flex-direction: column;
+}
+/* Home Intro */
+.home-intro {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
 }
 
 /*Avatar*/
@@ -75,15 +83,25 @@
 }
 
 /* About */
-.home-about{
+.home-about {
   font-size: var(--text-lg);
   letter-spacing: var(--tracking-wide);
   text-align: justify;
 }
 /* Responsive */
+@media (max-width: 1440px) {
+  .home-section {
+    margin-top: var(--space-8);
+  }
+  .home-intro {
+    display: block;
+    margin: 0;
+  }
+}
 @media (max-width: 1024px) {
   .home-section {
     padding: var(--space-6) 0;
+    margin: 0;
   }
   .home-avatar {
     width: 144px;
@@ -148,7 +166,8 @@
   .home-name {
     font-size: var(--text-2xl);
   }
-  .home-roles, .home-about {
+  .home-roles,
+  .home-about {
     font-size: var(--text-sm);
   }
   .home-actions {
