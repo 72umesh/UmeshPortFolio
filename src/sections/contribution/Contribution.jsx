@@ -8,11 +8,9 @@ function Contribution() {
       <h1 className="sectionh1">Contribution</h1>
 
       <div className="contribution-container">
-        <div className="circle-right"></div>
-        <div className="line"></div>
         {contribution.map((c, index) => (
           <ContributionCard
-            key={index}
+            key={`${c.name}-${index}`}
             {...c}
           />
         ))}
