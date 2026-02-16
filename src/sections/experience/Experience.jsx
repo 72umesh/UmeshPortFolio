@@ -4,7 +4,7 @@ import { Experiences } from "../../data/experiencedata";
 
 function Experience() {
   return (
-    <section id="experience" className="section-padding">
+    <section id="experience" className="container">
       <h1 className="sectionh1">Experience</h1>
 
       <div className="experience-container">

@@ -4,7 +4,7 @@ import {contribution} from "../../data/contributiondata";
 
 function Contribution() {
   return (
-    <section className="section-padding" id="contribution">
+    <section className="container" id="contribution">
       <h1 className="sectionh1">Contribution</h1>
 
       <div className="contribution-container">

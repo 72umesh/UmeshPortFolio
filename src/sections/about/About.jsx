@@ -19,7 +19,7 @@ function About() {
     }
   }, [isView, controls]);
   return (
-    <section id="about" className="section-padding flex-center">
+    <section id="about" className="flex-center container">
       <h1 className="sectionh1">About</h1>
 
       <div className="skills-container">

@@ -10,10 +10,7 @@ function SingleContactDiv({ title, url, Logo }) {
   }
 
   return (
-    <div
-      onClick={handleClick}
-      className="contactdiv"
-    >
+    <div onClick={handleClick} className="contactdiv">
       {<Logo className="contact-link-icon" />}
       <h4 className="contact-link-title">{title}</h4>
     </div>
@@ -50,105 +47,103 @@ function Contact() {
     }
   }
   return (
-    <div id="contact" className="section-padding">
-      <div className="container">
-        <h1 className="sectionh1">Get In Touch</h1>
+    <div id="contact" className="container">
+      <h1 className="sectionh1">Get In Touch</h1>
 
-        <div className="contact-content">
-          <div className="contact-links">
-            <h3 className="contact-content-title">Reach Out</h3>
-            <p className=" contact-link-description">
-              Let’s turn ideas into interactive experiences. Feel free to
-              connect, collaborate, or just talk code.
-            </p>
+      <div className="contact-content">
+        <div className="contact-links">
+          <h3 className="contact-content-title">Reach Out</h3>
+          <p className=" contact-link-description">
+            Let’s turn ideas into interactive experiences. Feel free to connect,
+            collaborate, or just talk code.
+          </p>
 
-            <div className="contact-links-grid">
-              {contacts.map((contact) => (
-                <SingleContactDiv
-                  key={contact.id}
-                  title={contact.title}
-                  url={contact.url}
-                  Logo={contact.Logo}
-                />
-              ))}
+          <div className="contact-links-grid">
+            {contacts.map((contact) => (
+              <SingleContactDiv
+                key={contact.id}
+                title={contact.title}
+                url={contact.url}
+                Logo={contact.Logo}
+              />
+            ))}
+          </div>
+
+          <p className="contact-availability">
+            Thanks for visiting — open to collaboration, internships, or
+            full-time roles!
+          </p>
+        </div>
+
+        <div className="contact-form-wrapper">
+          <h3 className="contact-form-title">Send a Message</h3>
+
+          <form className="contact-form" onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label htmlFor="name" className="form-label">
+                Name
+              </label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                className="form-input"
+                placeholder="Your Name"
+                required
+              />
             </div>
 
-            <p className="contact-availability">
-              Thanks for visiting — open to collaboration, internships, or
-              full-time roles!
-            </p>
-          </div>
+            <div className="form-group">
+              <label htmlFor="email" className="form-label">
+                Email
+              </label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                className="form-input"
+                placeholder="your.email@example.com"
+                required
+              />
+            </div>
 
-          <div className="contact-form-wrapper">
-            <h3 className="contact-form-title">Send a Message</h3>
+            <div className="form-group">
+              <label htmlFor="message" className="form-label p-josefin">
+                Message
+              </label>
+              <textarea
+                name="message"
+                placeholder="Your Message"
+                id="message"
+                className="form-textarea"
+                required
+              ></textarea>
+            </div>
 
-            <form className="contact-form" onSubmit={handleSubmit}>
-              <div className="form-group">
-                <label htmlFor="name" className="form-label">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  className="form-input"
-                  placeholder="Your Name"
-                  required
-                />
-              </div>
+            <button
+              type="submit"
+              disabled={status === "sending"}
+              className="form-submit"
+            >
+              {status === "sending"
+                ? "Sending..."
+                : status === "success"
+                  ? "Sent!"
+                  : "Send Message"}
+            </button>
 
-              <div className="form-group">
-                <label htmlFor="email" className="form-label">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  className="form-input"
-                  placeholder="your.email@example.com"
-                  required
-                />
-              </div>
+            {status === "success" && (
+              <p className="form-message form-message-success">
+                Message sent successfully! 'll get back to you soon.
+              </p>
+            )}
 
-              <div className="form-group">
-                <label htmlFor="message" className="form-label p-josefin">
-                  Message
-                </label>
-                <textarea
-                  name="message"
-                  placeholder="Your Message"
-                  id="message"
-                  className="form-textarea"
-                  required
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                disabled={status === "sending"}
-                className="form-submit"
-              >
-                {status === "sending"
-                  ? "Sending..."
-                  : status === "success"
-                    ? "Sent!"
-                    : "Send Message"}
-              </button>
-
-              {status === "success" && (
-                <p className="form-message form-message-success">
-                  Message sent successfully! 'll get back to you soon.
-                </p>
-              )}
-
-              {status === "error" && (
-                <p className="form-message form-message-error">
-                  Something went wrong. Please try again or email me directly
-                </p>
-              )}
-            </form>
-          </div>
+            {status === "error" && (
+              <p className="form-message form-message-error">
+                Something went wrong. Please try again or email me directly
+              </p>
+            )}
+          </form>
         </div>
       </div>
     </div>

@@ -11,8 +11,8 @@ import "./Project.css";
 
 function Project() {
   return (
-    <section id="projects" className="section-padding">
-      <div className="container">
+    <section id="projects" className="container">
+
         <h1 className="sectionh1">Proof of Work</h1>
 
         {/* Featured Projects */}
@@ -44,7 +44,7 @@ function Project() {
             ))}
           </div>
         </div>
-      </div>
+
     </section>
   );
 }
