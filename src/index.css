@@ -241,12 +241,18 @@ a {
     --text-4xl: 2rem;
     --text-5xl: 2.5rem;
   }
+  .container{
+    margin-top: var(--space-10);
+  }
 }
 @media (max-width: 768px) {
   :root {
     --text-3xl: 1.5rem;
     --text-4xl: 1.75rem;
     --text-5xl: 2rem;
+  }
+  .container{
+    margin-top: var(--space-8);
   }
 
   .section-padding {
@@ -266,5 +272,8 @@ a {
   
   .section-padding {
     padding: var(--space-6) var(--space-4) !important;
+  }
+  .container{
+    margin-top: var(--space-6);
   }
 }
