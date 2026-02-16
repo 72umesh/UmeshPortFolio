@@ -8,11 +8,8 @@ function Experience() {
       <h1 className="sectionh1">Experience</h1>
 
       <div className="experience-container">
-
         {Experiences.map((e, index) => (
-          <>
-            <ExperienceCard key={`${e}-${index}`} {...e} />
-          </>
+          <ExperienceCard key={`${e.name}-${index}`} {...e} />
         ))}
       </div>
     </section>

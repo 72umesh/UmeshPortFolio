@@ -57,9 +57,9 @@ function ProjectDiv(props) {
 
         <p className="project-description">{props.description}</p>
 
-        <div class="projects-actions">
+        <div className="projects-actions">
           <Tooltip text="View Source Code on Github">
-            <button class="project-btn flex-center" onClick={handlegithub}>
+            <button className="project-btn flex-center" onClick={handlegithub}>
               <FaGithub fontSize={20} /> Github
             </button>
           </Tooltip>

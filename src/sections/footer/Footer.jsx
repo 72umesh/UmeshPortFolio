@@ -9,7 +9,7 @@ function Footer() {
         <h4>Check My Projects</h4>
         <ul>
           {links.map((link) => (
-            <li id={link.id}>
+            <li key={link.id}>
               <a href={link.href} target="_blank">
                 {link.title}
               </a>

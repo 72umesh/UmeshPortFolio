@@ -4,6 +4,6 @@ function Button({ variant = "primary",size= "md", onClick, className = "", child
 
   const buttonClass = `btn btn-${variant} btn-${size} ${className}`.trim();
 
-  return <button className={buttonClass}>{children}</button>;
+  return <button className={buttonClass} onClick={onClick}>{children}</button>;
 }
 export default Button;
