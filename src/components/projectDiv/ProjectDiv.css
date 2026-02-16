@@ -83,6 +83,7 @@
   padding: var(--space-2);
   gap: var(--space-1);
   border-top: 1px solid rgba(255, 255, 255, 0.2);
+  flex: 1;
 }
 /* Title */
 .project-title {
