@@ -8,11 +8,21 @@ import "./Header.css";
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const handleNavClick = (section) => {
-    trackEvent(`nav_${section}`);
+  const handleNavClick = (sectionName) => {
+    trackEvent("header_nav_click", {
+      section: sectionName?.toLowerCase(),
+    });
     setIsMenuOpen(false);
   };
+  const handleMobileMenuOpen = () => {
+    setIsMenuOpen(true);
+    trackEvent("mobile_menu_open");
+  };
 
+  const handleMobileMenuClose = () => {
+    setIsMenuOpen(false);
+    trackEvent("mobile_menu_close");
+  };
   return (
     <header>
       <nav>
@@ -40,7 +50,7 @@ function Header() {
           <GiHamburgerMenu
             fontSize={27}
             style={{ cursor: "pointer" }}
-            onClick={() => setIsMenuOpen(true)}
+            onClick={handleMobileMenuOpen}
           />
 
           {isMenuOpen && (
@@ -48,7 +58,7 @@ function Header() {
               <FaTimes
                 fontSize={27}
                 className="overlay-close"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={handleMobileMenuClose}
               />
               <ul className="nav-smallscreen-links">
                 {NavItems.map((item, index) => (

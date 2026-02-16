@@ -11,8 +11,19 @@ function ExperienceCard({ role, duration, company, description, isView }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggle = () => {
-    setIsOpen(!isOpen);
+    const newState = !isOpen;
+    setIsOpen(newState);
     trackEvent("experience_namastedev_click");
+    trackEvent("experience_toggle", {
+      company: "namastedev",
+      action: newState ? "open" : "close",
+    });
+  };
+
+  const handleChallengeClick = (title) => {
+    trackEvent("experience_challenge_click", {
+      challenge: title?.toLowerCase().replace(/\s+/g, "_"),
+    });
   };
   return (
     <div className="experience-card">
@@ -49,6 +60,7 @@ function ExperienceCard({ role, duration, company, description, isView }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="challenge-link"
+                onClick={() => handleChallengeClick(c.title)}
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}

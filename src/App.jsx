@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import ReactGA from "react-ga4";
 import { Analytics } from "@vercel/analytics/react";
 import "./App.css";
 
@@ -13,20 +12,79 @@ import Experience from "./sections/experience/Experience";
 import Contribution from "./sections/contribution/Contribution";
 import SmoothFollower from "./components/smoothFollower/SmoothFollower";
 
+import {
+  trackEvent,
+  trackScrollDepth,
+  trackTimeOnPage,
+  trackSectionView,
+} from "./utils/analytics";
+
 function App() {
   useEffect(() => {
-    ReactGA.initialize("G-4W4BG1Q8CZ");
-    ReactGA.send("pageview");
+    trackEvent("portfolio_page_viewed");
   }, []);
+
   useEffect(() => {
-  if (window.location.hash) {
-    const id = window.location.hash.substring(1); 
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    window.addEventListener("scroll", trackScrollDepth);
+
+    return () => {
+      window.removeEventListener("scroll", trackScrollDepth);
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      trackTimeOnPage();
+    };
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, []);
+
+  useEffect(() => {
+    const viewedSections = new Set();
+
+    const observerOptions = {
+      threshold: 0.5,
+      rootMargin: "0px",
+    };
+
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const sectionId = entry.target.id;
+
+          if (sectionId && !viewedSections.has(sectionId)) {
+            trackSectionView(sectionId);
+            viewedSections.add(sectionId);
+          }
+        }
+      });
+    };
+    const observer = new IntersectionObserver(
+      observerCallback,
+      observerOptions,
+    );
+
+    const sections = document.querySelectorAll("section[id]");
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  useEffect(() => {
+    if (window.location.hash) {
+      const id = window.location.hash.substring(1);
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
     }
-  }
-}, []);
+  }, []);
   return (
     <>
       <SmoothFollower />
@@ -44,7 +102,7 @@ function App() {
           <Footer />
         </main>
       </div>
-      
+
       <Analytics
         beforeSend={(event) => {
           if (

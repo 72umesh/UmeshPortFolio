@@ -16,10 +16,11 @@ function Home() {
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: "smooth" });
     }
+    trackEvent("contact_button_click");
   }
 
   const handleSocialClick = (eventName) => {
-    trackEvent(eventName);
+    trackEvent('social_link_click', { platform: eventName });
   };
   return (
     <section id="home" className="home-section container">

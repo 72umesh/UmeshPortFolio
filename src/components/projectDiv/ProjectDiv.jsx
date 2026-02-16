@@ -9,13 +9,16 @@ import { trackEvent } from "../../utils/analytics";
 function ProjectDiv(props) {
   function handledemo() {
     window.open(props.demo, "_blank");
-    trackEvent(`project_demo_${props.title.toLowerCase()}_click`);
+    trackEvent("project_demo_click", {
+      project: props.title.toLowerCase(),
+    });
   }
   function handlegithub() {
     window.open(props.github, "_blank");
-    trackEvent(`project_github_${props.title.toLowerCase()}_click`);
+    trackEvent("project_github_click", {
+      project: props.title.toLowerCase(),
+    });
   }
-
   return (
     <div className="project-card">
       {/* {props.isNew && <div className="project-badge">✨ New</div>} */}

@@ -17,6 +17,21 @@ function ContributionCard({
 }) {
   const [isOpen, setIsOpen] = useState(false);
 
+  const handleToggle = () => {
+    const newState = !isOpen;
+    setIsOpen(newState);
+
+    trackEvent("contribution_toggle", {
+      title: title?.toLowerCase().replace(/\s+/g, "_"),
+      action: newState ? "open" : "close",
+    });
+  };
+  const handlePRClick = (prTitle, repoName) => {
+    trackEvent("contribution_pr_click", {
+    pr: prTitle?.toLowerCase().replace(/\s+/g, "_"),
+    repo: repoName?.toLowerCase().replace(/\s+/g, "_"),
+    });
+  };
   return (
     <div className="contribution-card">
       <div className="contribution-content">
@@ -30,10 +45,7 @@ function ContributionCard({
             isOpen={isOpen}
             openText={toggleText.open}
             closeText={toggleText.close}
-            onToogle={() => {
-              setIsOpen(!isOpen);
-              trackEvent("experience_hacktoberfest_click");
-            }}
+            onToogle={handleToggle }
           />
 
           <AnimatedCollapse isOpen={isOpen} className="prs-list">
@@ -52,12 +64,14 @@ function ContributionCard({
                     target="_blank"
                     rel="noopener noreferrer"
                     className="pr-title"
+                    onClick={() => handlePRClick(pr.title, pr.repoName)}
                   >
                     {pr.title}
                   </a>
                 </div>
                 <p className="pr-repo">
-                  Contributed to <span className="repo-name">{pr.repoName}</span>
+                  Contributed to{" "}
+                  <span className="repo-name">{pr.repoName}</span>
                 </p>
               </motion.div>
             ))}
