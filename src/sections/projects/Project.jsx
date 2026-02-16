@@ -12,39 +12,37 @@ import "./Project.css";
 function Project() {
   return (
     <section id="projects" className="container">
+      <h1 className="sectionh1">Proof of Work</h1>
 
-        <h1 className="sectionh1">Proof of Work</h1>
-
-        {/* Featured Projects */}
-        <div className="featured-section" id="featured-section">
-          <h3 className="subsection-title">Features Work</h3>
-          <div className="featured-container">
-            {featuredData.map((featured) => (
-              <FeaturedCard key={featured.id} {...featured} />
-            ))}
-          </div>
+      {/* Featured Projects */}
+      <div className="featured-section" id="featured-section">
+        <h3 className="subsection-title">Features Work</h3>
+        <div className="featured-container">
+          {featuredData.map((featured) => (
+            <FeaturedCard key={featured.id} {...featured} />
+          ))}
         </div>
+      </div>
 
-        {/* All Projects */}
-        <div className="projects-section">
-          <h3 className="subsection-title">All Projects</h3>
+      {/* All Projects */}
+      <div className="projects-section" id="projects-section">
+        <h3 className="subsection-title">All Projects</h3>
 
-          <div className="projects-container">
-            {projectData.map((project) => (
-              <ProjectDiv key={project.id} {...project} />
-            ))}
-          </div>
+        <div className="projects-container">
+          {projectData.map((project) => (
+            <ProjectDiv key={project.id} {...project} />
+          ))}
         </div>
+      </div>
 
-        {/* Dashboards */}
-        <div className="dashboard-section">
-          <div className="dashboard-container">
-            {dashboardData.map((dashboard) => (
-              <DashBoardCard key={dashboard.id} {...dashboard} />
-            ))}
-          </div>
+      {/* Dashboards */}
+      <div className="dashboard-section" id="dashboard-section">
+        <div className="dashboard-container">
+          {dashboardData.map((dashboard) => (
+            <DashBoardCard key={dashboard.id} {...dashboard} />
+          ))}
         </div>
-
+      </div>
     </section>
   );
 }

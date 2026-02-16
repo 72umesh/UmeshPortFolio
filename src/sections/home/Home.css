@@ -91,7 +91,7 @@
 /* Responsive */
 @media (max-width: 1440px) {
   .home-section {
-    margin-top: var(--space-8);
+    margin: var(--space-8) auto 0;
   }
   .home-intro {
     display: block;
@@ -101,7 +101,6 @@
 @media (max-width: 1024px) {
   .home-section {
     padding: var(--space-6) 0;
-    margin: 0;
   }
   .home-avatar {
     width: 144px;
@@ -114,6 +113,11 @@
   .home-roles {
     font-size: var(--text-base);
     margin-bottom: var(--space-6);
+  }
+}
+@media (max-width:900px){
+  .home-section{
+    margin: 3rem auto;
   }
 }
 @media screen and (max-width: 768px) {
@@ -151,8 +155,7 @@
 }
 @media screen and (max-width: 640px) {
   .home-section {
-    padding: var(--space-4) var(--space-6);
-    margin: 0;
+    padding: var(--space-4) var(--space-4);
     margin-top: var(--space-4);
   }
   .home-avatar {

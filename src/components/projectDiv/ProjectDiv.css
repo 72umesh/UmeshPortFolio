@@ -10,7 +10,7 @@
   position: relative;
   overflow: hidden;
   backdrop-filter: blur(10px);
-  max-width: 380px;
+  max-width: 420px;
 }
 .project-badge {
   position: absolute;
