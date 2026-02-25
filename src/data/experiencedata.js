@@ -1,3 +1,5 @@
+import { title } from "framer-motion/client";
+
 const Experiences = [
   {
     role: "Freelance Frontend Contributor",
@@ -6,9 +8,9 @@ const Experiences = [
     description: [
       "Designed and authored 22+ React.js and JavaScript coding challenges for an interview-focused practice platform",
       "Challenges engaged by learners, resulting in 3,000+ attempts and 2,200+ successful solves with plus 15k+ total views across published content",
-      "Designed real-world, interview-style problems to help developers prepare for technical roles"
+      "Designed real-world, interview-style problems to help developers prepare for technical roles",
     ],
-    isView: true
+    isView: true,
   },
   {
     role: "Web Developer Intern",
@@ -22,16 +24,55 @@ const Experiences = [
   },
 ];
 const Challenges = [
-  { title: "Copy to Clipboard", link: "https://namastedev.com/practice/copy-to-clipboard" },
+  {
+    title: "Copy to Clipboard",
+    link: "https://namastedev.com/practice/copy-to-clipboard",
+  },
   { title: "Back to Top", link: "https://namastedev.com/practice/back-to-top" },
-  { title: "Character Counter", link: "https://namastedev.com/practice/character-counter" },
-  { title: "Word Counter", link: "https://namastedev.com/practice/word-counter" },
-  { title: "Generate Password", link: "https://namastedev.com/practice/generate-password" },
-  { title: "Temperature Convertor", link: "https://namastedev.com/practice/temperature-convertor" },
+  {
+    title: "Character Counter",
+    link: "https://namastedev.com/practice/character-counter",
+  },
+  {
+    title: "Word Counter",
+    link: "https://namastedev.com/practice/word-counter",
+  },
+  {
+    title: "Generate Password",
+    link: "https://namastedev.com/practice/generate-password",
+  },
+  {
+    title: "Temperature Convertor",
+    link: "https://namastedev.com/practice/temperature-convertor",
+  },
   { title: "Undo Redo", link: "https://namastedev.com/practice/undo-redo" },
-  { title: "Rock Paper Scissor", link: "https://namastedev.com/practice/rock-paper-scissor" },
-  { title: "Auto Save Text", link: "https://namastedev.com/practice/auto-save-text" },
-  { title: "Auto Save Form", link: "https://namastedev.com/practice/auto-save-form" },
-
-]
+  {
+    title: "Rock Paper Scissor",
+    link: "https://namastedev.com/practice/rock-paper-scissor",
+  },
+  {
+    title: "Auto Save Text",
+    link: "https://namastedev.com/practice/auto-save-text",
+  },
+  {
+    title: "Auto Save Form",
+    link: "https://namastedev.com/practice/auto-save-form",
+  },
+  {
+    title: "Acronym Generator",
+    link: "https://namastedev.com/practice/acronym-generator",
+  },
+  {
+    title: "Resizable Split Pane",
+    link: "https://namastedev.com/practice/resizable-split-pane",
+  },
+  {
+    title: "Slugify a String",
+    link: "https://namastedev.com/practice/slugify-a-string",
+  },
+  {
+    title:"Lucky Number",
+    link:"https://namastedev.com/practice/lucky-number"
+  }
+];
 export { Experiences, Challenges };
