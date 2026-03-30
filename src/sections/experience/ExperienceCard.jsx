@@ -1,28 +1,32 @@
-import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { useState } from "react";
 import "./ExperienceCard.css";
 import { Challenges } from "../../data/experiencedata";
-import { motion } from "framer-motion";
 import ToogleButton from "../../components/toogleButton/toogleButton";
-import AnimatedCollapse from "../../components/animatedCollapse/AnimatedCollapse";
 import { trackEvent } from "../../utils/analytics";
+import ChallengeCard from "../../components/challengeCard/challengeCard";
+import { motion, AnimatePresence } from "framer-motion";
+
+const INITIAL_VISIBLE = 4;
 
 function ExperienceCard({ role, duration, company, description, isView }) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [showAll, setShowAll] = useState(false);
 
-  const handleToggle = () => {
-    const newState = !isOpen;
-    setIsOpen(newState);
-    trackEvent("experience_namastedev_click");
-    trackEvent("experience_toggle", {
-      company: "namastedev",
-      action: newState ? "open" : "close",
-    });
-  };
+  const visibleChallenges = showAll
+    ? Challenges
+    : Challenges.slice(0, INITIAL_VISIBLE);
+
+  const hasMore = Challenges.length > INITIAL_VISIBLE;
 
   const handleChallengeClick = (title) => {
     trackEvent("experience_challenge_click", {
       challenge: title?.toLowerCase().replace(/\s+/g, "_"),
+    });
+  };
+
+  const handleViewAll = () => {
+    setShowAll((prev) => !prev);
+    trackEvent("experience_challenges_view_all", {
+      action: showAll ? "collapse" : "expand",
     });
   };
   return (
@@ -45,31 +49,35 @@ function ExperienceCard({ role, duration, company, description, isView }) {
 
       {isView && (
         <div className="isview-container">
-          <ToogleButton
-            isOpen={isOpen}
-            openText="View My Published Questions"
-            closeText="Hide My Published Questions"
-            onToogle={handleToggle}
-          />
+          <p className="challenges-section-label">My Published Challenges</p>
 
-          <AnimatedCollapse isOpen={isOpen} className="challenges-container">
-            {Challenges.map((c, i) => (
-              <motion.a
-                key={c.title}
-                href={c.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="challenge-link"
-                onClick={() => handleChallengeClick(c.title)}
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-              >
-                <FaArrowUpRightFromSquare fontSize={12} />
-                <span className="challenge-title">{c.title}</span>
-              </motion.a>
-            ))}
-          </AnimatedCollapse>
+          <motion.div
+            className="challenge-cards-grid"
+            layout
+            transition={{
+              layout: { duration: 0.4, ease: [0.25, 0.1, 0.25, 1] },
+            }}
+          >
+            <AnimatePresence initial={false}>
+              {visibleChallenges.map((c, i) => (
+                <ChallengeCard
+                  key={c.title}
+                  challenge={c}
+                  index={i}
+                  onClick={handleChallengeClick}
+                />
+              ))}
+            </AnimatePresence>
+          </motion.div>
+
+          {hasMore && (
+            <ToogleButton
+              isOpen={showAll}
+              openText="View More Questions"
+              closeText="Show Less"
+              onToogle={handleViewAll}
+            />
+          )}
         </div>
       )}
     </div>
