@@ -33,20 +33,20 @@ function ChallengeCard({ challenge, index, onClick }) {
         <Tooltip text={"Total Views"}>
           <div className="challenge-stat">
             <FaEye className="stat-icon" />
-            <span>23</span>
+            <span>{challenge.views}</span>
           </div>
         </Tooltip>
 
         <Tooltip text={"Attempted By"}>
           <div className="challenge-stat">
             <FaRegClipboard className="stat-icon" />
-            <span>23</span>
+            <span>{challenge.attemptedBy}</span>
           </div>
         </Tooltip>
         <Tooltip text={"Submitted By"}>
           <div className="challenge-stat">
             <FaCheckCircle className="stat-icon" />
-            <span>23</span>
+            <span>{challenge.submittedBy}</span>
           </div>
         </Tooltip>
       </div>

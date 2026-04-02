@@ -60,3 +60,7 @@
   font-size: var(--text-sm);
   opacity: 0.9;
 }
+
+.challenge-stat span{
+  font-family: var(--font-body);
+}
