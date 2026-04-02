@@ -6,7 +6,7 @@
 /* Timeline Line */
 .experience-content {
   position: relative;
-  padding-left: var(--space-3); 
+  padding-left: var(--space-3);
 }
 .experience-content::before {
   content: "";
@@ -16,9 +16,8 @@
   width: 2px;
   height: 100%;
   background-color: var(--color-coral);
-  border-radius:var(--radius-sm)
+  border-radius: var(--radius-sm);
 }
-
 
 /* Header */
 .experience-header {
@@ -133,11 +132,9 @@
   .experience-company {
     font-size: var(--text-lg);
   }
-  @media (max-width: 1024px) {
   .challenge-cards-grid {
     grid-template-columns: repeat(3, 1fr);
   }
-}
 }
 
 @media (max-width: 768px) {
@@ -170,11 +167,9 @@
     font-size: var(--text-base);
   }
 
-  @media (max-width: 1024px) {
   .challenge-cards-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-}
 }
 
 @media (max-width: 640px) {
@@ -197,9 +192,7 @@
     font-size: var(--text-sm);
   }
 
-  @media (max-width: 1024px) {
   .challenge-cards-grid {
-    grid-template-columns:1fr;
+    grid-template-columns: 1fr;
   }
-}
 }

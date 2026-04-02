@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./ExperienceCard.css";
 import { Challenges } from "../../data/experiencedata";
 import ToogleButton from "../../components/toogleButton/toogleButton";
@@ -6,16 +6,34 @@ import { trackEvent } from "../../utils/analytics";
 import ChallengeCard from "../../components/challengeCard/challengeCard";
 import { motion, AnimatePresence } from "framer-motion";
 
-const INITIAL_VISIBLE = 4;
 
 function ExperienceCard({ role, duration, company, description, isView }) {
   const [showAll, setShowAll] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(4);
+
+  useEffect(() => {
+  const updateCount = () => {
+    const width = window.innerWidth;
+
+    if (width <= 640) {
+      setVisibleCount(2); // mobile
+    } else if (width <= 1024) {
+      setVisibleCount(3); // tablet
+    } else {
+      setVisibleCount(4); // desktop
+    }
+  };
+
+  updateCount(); 
+  window.addEventListener("resize", updateCount);
+
+  return () => window.removeEventListener("resize", updateCount);
+}, []);
 
   const visibleChallenges = showAll
     ? Challenges
-    : Challenges.slice(0, INITIAL_VISIBLE);
-
-  const hasMore = Challenges.length > INITIAL_VISIBLE;
+    : Challenges.slice(0, visibleCount);
+  const hasMore = Challenges.length > visibleCount;
 
   const handleChallengeClick = (title) => {
     trackEvent("experience_challenge_click", {
